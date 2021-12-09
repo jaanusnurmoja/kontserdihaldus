@@ -2,25 +2,10 @@
     "teosed": [
         {
             "id": 123223,
-            "pealkiri": "Laul number üks",
+            "pealkiri": "Cantus Haljalaensis",
             "versioonid": [
                 {
-                    "pealkiri": "Laul number üks",
-                    "helilooja": [
-                        {
-                            "id": 1,
-                            "nimi": "Ahti Bachblum"
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 2,
-                            "nimi": "Neeme Plutus"
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 2007,
-                    "kestvus": "00:09:22",
+                    "aasta": 2006,
                     "esmaettekanne": {
                         "esitaja": [
                             {
@@ -32,15 +17,41 @@
                                 "nimi": "Virumaa kammerorkester"
                             }
                         ],
-                        "kuupaev": "2007-05-08"
-                    }
-                },
-                {
-                    "pealkiri": "Laul number üks",
+                        "kuupaev": "2006-05-08"
+                    },
                     "helilooja": [
                         {
                             "id": 1,
                             "nimi": "Ahti Bachblum"
+                        }
+                    ],
+                    "kestvus": "00:09:22",
+                    "originaal": true,
+                    "pealkiri": "Laul number üks",
+                    "teksti-autor": [
+                        {
+                            "id": 2,
+                            "nimi": "Neeme Plutus"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2011,
+                    "esituskoosseis": [
+                        "rockansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
+                        }
+                    ],
+                    "kestvus": "00:05:30",
+                    "pealkiri": "Laul number üks",
+                    "seadja": [
+                        {
+                            "id": 5,
+                            "nimi": "Peep Pihlak"
                         }
                     ],
                     "teksti-autor": [
@@ -48,17 +59,6 @@
                             "id": 2,
                             "nimi": "Neeme Plutus"
                         }
-                    ],
-                    "seadja": [
-                        {
-                            "id": 5,
-                            "nimi": "Peep Pihlak"
-                        }
-                    ],
-                    "aasta": 2011,
-                    "kestvus": "00:05:30",
-                    "esituskoosseis": [
-                        "rockansambel"
                     ]
                 }
             ]
@@ -68,28 +68,7 @@
             "pealkiri": "Piparkoogipoisid",
             "versioonid": [
                 {
-                    "pealkiri": "Piparkoogipoisid",
-                    "helilooja": [
-                        {
-                            "id": 6,
-                            "nimi": "Vello Lipand"
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 7,
-                            "nimi": "Astrid Gullstrand"
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 8,
-                            "nimi": "Heljo Mänd"
-                        }
-                    ],
-                    "originaal": true,
                     "aasta": 1960,
-                    "kestvus": "00:01:09",
                     "esituskoosseis": [
                         "meesansambel",
                         "instrumentaalansambel"
@@ -114,848 +93,893 @@
                             }
                         ],
                         "kuupaev": "1961-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "Tre pepparkaksgubbar",
+                    },
                     "helilooja": [
                         {
                             "id": 6,
                             "nimi": "Vello Lipand"
                         }
                     ],
+                    "kestvus": "00:01:09",
+                    "originaal": true,
+                    "pealkiri": "Piparkoogipoisid",
                     "teksti-autor": [
                         {
                             "id": 7,
                             "nimi": "Astrid Gullstrand"
                         }
                     ],
+                    "tolkija": [
+                        {
+                            "id": 8,
+                            "nimi": "Heljo Mänd"
+                        }
+                    ]
+                },
+                {
                     "aasta": 2013,
-                    "kestvus": "00:01:09",
-                    "esituskoosseis": [
-                        "meesansambel",
-                        "instrumentaalansambel"
-                    ],
                     "esitaja": [
                         {
                             "id": 13,
                             "nimi": "HaLe MaJa"
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 0,
-            "pealkiri": "",
-            "versioonid": [
-                {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
                     ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
                     "esituskoosseis": [
-                        ""
+                        "meesansambel",
+                        "instrumentaalansambel"
                     ],
-                    "esmaettekanne": {
-                        "esitaja": [
-                            {
-                                "id": 0,
-                                "nimi": ""
-                            }
-                        ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
                     "helilooja": [
                         {
                             "id": 6,
-                            "nimi": ""
+                            "nimi": "Vello Lipand"
                         }
                     ],
+                    "kestvus": "00:01:09",
+                    "pealkiri": "Tre pepparkaksgubbar",
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 7,
+                            "nimi": "Astrid Gullstrand"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 1582693197,
+            "pealkiri": "Aeg meil minna üheskoos",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 6,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 136824003382,
+            "pealkiri": "Alte Kameraden",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1889,
                     "esituskoosseis": [
-                        ""
+                        "meeskoor",
+                        "puhkpilliorkester"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 11,
+                                "nimi": "Nowaweser Kapelle Fritz Köhler"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "aasta": 1895
+                    },
                     "helilooja": [
                         {
-                            "id": 6,
-                            "nimi": ""
+                            "id": 12,
+                            "nimi": "Carl Teike"
                         }
                     ],
+                    "kestvus": "00:02:20",
+                    "originaal": true,
+                    "pealkiri": "Alte Kameraden",
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": -1,
+                            "nimi": "teadmata"
                         }
                     ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                },
+                {
+                    "aasta": 1889,
                     "esituskoosseis": [
-                        ""
+                        "puhkpilliorkester"
                     ],
+                    "helilooja": [
+                        {
+                            "id": 12,
+                            "nimi": "Carl Teike"
+                        }
+                    ],
+                    "kestvus": "00:02:20",
+                    "pealkiri": "Alte Kameraden"
+                },
+                {
+                    "aasta": 1960,
+                    "esituskoosseis": [
+                        "puhkpilliorkester"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 12,
+                            "nimi": "Carl Teike"
+                        }
+                    ],
+                    "kestvus": "00:02:20",
+                    "pealkiri": "Vanad sõbrad"
+                },
+                {
+                    "aasta": 1960,
                     "esitaja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 13,
+                            "nimi": "RAM-1"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel",
+                        "puhkpilliorkester"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 12,
+                            "nimi": "Carl Teike"
+                        }
+                    ],
+                    "kestvus": "00:02:20",
+                    "pealkiri": "Vanad sõbrad",
+                    "teksti-autor": [
+                        {
+                            "id": -1,
+                            "nimi": "teadmata"
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": -1,
+                            "nimi": "teadmata"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 1582693197,
+            "pealkiri": "Aeg meil minna üheskoos",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931971,
+            "pealkiri": "Aeg meil minna üheskoos 1",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "Aeg meil minna üheskoos 1",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 1",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931972,
+            "pealkiri": "Aeg meil minna üheskoos 2",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 2",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931973,
+            "pealkiri": "Aeg meil minna üheskoos 3",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "Aeg meil minna üheskoos 3",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 3",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931974,
+            "pealkiri": "Aeg meil minna üheskoos 4",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "Aeg meil minna üheskoos 4",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 4",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931975,
+            "pealkiri": "Aeg meil minna üheskoos 5",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "Aeg meil minna üheskoos 5",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 5",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931976,
+            "pealkiri": "Aeg meil minna üheskoos 6",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "Aeg meil minna üheskoos 6",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 6",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931977,
+            "pealkiri": "Aeg meil minna üheskoos 7",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "Aeg meil minna üheskoos 7",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 7",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
-                    "esitaja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 0,
-            "pealkiri": "",
+            "id": 15826931978,
+            "pealkiri": "Aeg meil minna üheskoos 8",
             "versioonid": [
                 {
-                    "pealkiri": "",
-                    "helilooja": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "teksti-autor": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "tolkija": [
-                        {
-                            "id": 0,
-                            "nimi": ""
-                        }
-                    ],
-                    "originaal": true,
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
+                    "aasta": 1986,
                     "esituskoosseis": [
-                        ""
+                        "popansambel"
                     ],
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 0,
-                                "nimi": ""
+                                "id": 8,
+                                "nimi": "Karavan"
                             }
                         ],
-                        "kuupaev": "0000-01-01"
-                    }
-                },
-                {
-                    "pealkiri": "",
+                        "kuupaev": null
+                    },
                     "helilooja": [
                         {
-                            "id": 6,
-                            "nimi": ""
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "originaal": true,
+                    "pealkiri": "Aeg meil minna üheskoos 8",
+                    "teksti-autor": [
+                        {
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 2014,
+                    "esitaja": [
+                        {
+                            "id": 11,
+                            "nimi": "RAMMM"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel"
+                    ],
+                    "helilooja": [
+                        {
+                            "id": 9,
+                            "nimi": "Agu Tammeorg"
+                        }
+                    ],
+                    "kestvus": "00:05:00",
+                    "pealkiri": "Aeg meil minna üheskoos 8",
+                    "seadja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
                         }
                     ],
                     "teksti-autor": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 10,
+                            "nimi": "Ott Arder"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 133823673349,
+            "pealkiri": "Beim Kronenwirt",
+            "versioonid": [
+                {
+                    "esituskoosseis": [
+                        "lauljad",
+                        "külakapell"
+                    ],
+                    "rahvalaul": true,
+                    "helilooja": [
+                        {
+                            "id": 200,
+                            "nimi": "Saksa"
                         }
                     ],
-                    "aasta": 0,
-                    "kestvus": "00:00:00",
-                    "esituskoosseis": [
-                        ""
-                    ],
+                    "kestvus": "00:02:15",
+                    "originaal": true,
+                    "pealkiri": "Beim Kronenwirt",
+                    "teksti-autor": [
+                        {
+                            "id": 100,
+                            "nimi": "Heinrich Binder"
+                        }
+                    ]
+                },
+                {
+                    "aasta": 1969,
                     "esitaja": [
                         {
-                            "id": 0,
-                            "nimi": ""
+                            "id": 102,
+                            "nimi": "RAM-3"
+                        }
+                    ],
+                    "esituskoosseis": [
+                        "meesansambel",
+                        "saateansambel"
+                    ],
+                    "rahvalaul": true,
+                    "helilooja": [
+                        {
+                            "id": 200,
+                            "nimi": "Saksa"
+                        }
+                    ],
+                    "kestvus": "00:02:15",
+                    "pealkiri": "Külapulmad",
+                    "teksti-autor": [
+                        {
+                            "id": 100,
+                            "nimi": "Heinrich Binder"
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 101,
+                            "nimi": "Aliide Halliste"
                         }
                     ]
                 }
