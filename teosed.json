@@ -1,0 +1,965 @@
+{
+    "teosed": [
+        {
+            "id": 123223,
+            "pealkiri": "Laul number üks",
+            "versioonid": [
+                {
+                    "pealkiri": "Laul number üks",
+                    "helilooja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 2,
+                            "nimi": "Neeme Plutus"
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 2007,
+                    "kestvus": "00:09:22",
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 3,
+                                "nimi": "Haljala segakoor"
+                            },
+                            {
+                                "id": 4,
+                                "nimi": "Virumaa kammerorkester"
+                            }
+                        ],
+                        "kuupaev": "2007-05-08"
+                    }
+                },
+                {
+                    "pealkiri": "Laul number üks",
+                    "helilooja": [
+                        {
+                            "id": 1,
+                            "nimi": "Ahti Bachblum"
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 2,
+                            "nimi": "Neeme Plutus"
+                        }
+                    ],
+                    "seadja": [
+                        {
+                            "id": 5,
+                            "nimi": "Peep Pihlak"
+                        }
+                    ],
+                    "aasta": 2011,
+                    "kestvus": "00:05:30",
+                    "esituskoosseis": [
+                        "rockansambel"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 123323,
+            "pealkiri": "Piparkoogipoisid",
+            "versioonid": [
+                {
+                    "pealkiri": "Piparkoogipoisid",
+                    "helilooja": [
+                        {
+                            "id": 6,
+                            "nimi": "Vello Lipand"
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 7,
+                            "nimi": "Astrid Gullstrand"
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 8,
+                            "nimi": "Heljo Mänd"
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 1960,
+                    "kestvus": "00:01:09",
+                    "esituskoosseis": [
+                        "meesansambel",
+                        "instrumentaalansambel"
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 9,
+                                "nimi": "Uno Loop"
+                            },
+                            {
+                                "id": 10,
+                                "nimi": "Arved Haug"
+                            },
+                            {
+                                "id": 11,
+                                "nimi": "Eri Klas"
+                            },
+                            {
+                                "id": 12,
+                                "nimi": "Emil Laansoo ansambel"
+                            }
+                        ],
+                        "kuupaev": "1961-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "Tre pepparkaksgubbar",
+                    "helilooja": [
+                        {
+                            "id": 6,
+                            "nimi": "Vello Lipand"
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 7,
+                            "nimi": "Astrid Gullstrand"
+                        }
+                    ],
+                    "aasta": 2013,
+                    "kestvus": "00:01:09",
+                    "esituskoosseis": [
+                        "meesansambel",
+                        "instrumentaalansambel"
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 13,
+                            "nimi": "HaLe MaJa"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 6,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 6,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 6,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "pealkiri": "",
+            "versioonid": [
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "tolkija": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "originaal": true,
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esmaettekanne": {
+                        "esitaja": [
+                            {
+                                "id": 0,
+                                "nimi": ""
+                            }
+                        ],
+                        "kuupaev": "0000-01-01"
+                    }
+                },
+                {
+                    "pealkiri": "",
+                    "helilooja": [
+                        {
+                            "id": 6,
+                            "nimi": ""
+                        }
+                    ],
+                    "teksti-autor": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ],
+                    "aasta": 0,
+                    "kestvus": "00:00:00",
+                    "esituskoosseis": [
+                        ""
+                    ],
+                    "esitaja": [
+                        {
+                            "id": 0,
+                            "nimi": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
