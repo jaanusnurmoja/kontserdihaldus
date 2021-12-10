@@ -1,3 +1,4 @@
 # kontserdikava
 Loodud seoses veebiarendajate kursusega lõputöö jaoks. 
-Sellega tegelevad Jaanus ja Oliver
+
+Sellega tegelevad Jaanus ja Oliver. Sissejuhatuseks toimub git'i lühikursus.
