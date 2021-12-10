@@ -28,7 +28,7 @@
                     "kestvus": "00:09:22",
                     "originaal": true,
                     "pealkiri": "Laul number üks",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 2,
                             "nimi": "Neeme Plutus"
@@ -54,7 +54,7 @@
                             "nimi": "Peep Pihlak"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 2,
                             "nimi": "Neeme Plutus"
@@ -103,7 +103,7 @@
                     "kestvus": "00:01:09",
                     "originaal": true,
                     "pealkiri": "Piparkoogipoisid",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 7,
                             "nimi": "Astrid Gullstrand"
@@ -136,7 +136,7 @@
                     ],
                     "kestvus": "00:01:09",
                     "pealkiri": "Tre pepparkaksgubbar",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 7,
                             "nimi": "Astrid Gullstrand"
@@ -172,7 +172,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -204,7 +204,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -241,12 +241,12 @@
                     "kestvus": "00:02:20",
                     "originaal": true,
                     "pealkiri": "Alte Kameraden",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": -1,
                             "nimi": "teadmata"
                         }
-                    ],
+                    ]
                 },
                 {
                     "aasta": 1889,
@@ -296,7 +296,7 @@
                     ],
                     "kestvus": "00:02:20",
                     "pealkiri": "Vanad sõbrad",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": -1,
                             "nimi": "teadmata"
@@ -338,7 +338,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -370,7 +370,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -406,7 +406,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "Aeg meil minna üheskoos 1",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -438,7 +438,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -474,7 +474,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -506,7 +506,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -542,7 +542,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "Aeg meil minna üheskoos 3",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -574,7 +574,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -610,7 +610,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "Aeg meil minna üheskoos 4",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -642,7 +642,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -678,7 +678,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "Aeg meil minna üheskoos 5",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -710,7 +710,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -746,7 +746,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "Aeg meil minna üheskoos 6",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -778,7 +778,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -814,7 +814,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "Aeg meil minna üheskoos 7",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -846,7 +846,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -882,7 +882,7 @@
                     "kestvus": "00:05:00",
                     "originaal": true,
                     "pealkiri": "Aeg meil minna üheskoos 8",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -914,7 +914,7 @@
                             "nimi": "Ahti Bachblum"
                         }
                     ],
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 10,
                             "nimi": "Ott Arder"
@@ -942,7 +942,7 @@
                     "kestvus": "00:02:15",
                     "originaal": true,
                     "pealkiri": "Beim Kronenwirt",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 100,
                             "nimi": "Heinrich Binder"
@@ -970,7 +970,7 @@
                     ],
                     "kestvus": "00:02:15",
                     "pealkiri": "Külapulmad",
-                    "teksti-autor": [
+                    "tekstiautor": [
                         {
                             "id": 100,
                             "nimi": "Heinrich Binder"
