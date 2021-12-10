@@ -27,7 +27,7 @@
                     ],
                     "kestvus": "00:09:22",
                     "originaal": true,
-                    "pealkiri": "Laul number üks",
+                    "pealkiri": "Cantus Haljalaensis",
                     "tekstiautor": [
                         {
                             "id": 2,
@@ -47,7 +47,7 @@
                         }
                     ],
                     "kestvus": "00:05:30",
-                    "pealkiri": "Laul number üks",
+                    "pealkiri": "Cantus Haljalaensis",
                     "seadja": [
                         {
                             "id": 5,
@@ -76,19 +76,19 @@
                     "esmaettekanne": {
                         "esitaja": [
                             {
-                                "id": 9,
+                                "id": 14,
                                 "nimi": "Uno Loop"
                             },
                             {
-                                "id": 10,
+                                "id": 15,
                                 "nimi": "Arved Haug"
                             },
                             {
-                                "id": 11,
+                                "id": 16,
                                 "nimi": "Eri Klas"
                             },
                             {
-                                "id": 12,
+                                "id": 17,
                                 "nimi": "Emil Laansoo ansambel"
                             }
                         ],

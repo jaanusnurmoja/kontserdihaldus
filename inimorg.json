@@ -1,0 +1,90 @@
+{
+    "1": {
+        "id": 1,
+        "nimi": "Ahti Bachblum"
+    },
+    "2": {
+        "id": 2,
+        "nimi": "Neeme Plutus"
+    },
+    "3": {
+        "id": 3,
+        "nimi": "Haljala segakoor"
+    },
+    "4": {
+        "id": 4,
+        "nimi": "Virumaa kammerorkester"
+    },
+    "5": {
+        "id": 5,
+        "nimi": "Peep Pihlak"
+    },
+    "6": {
+        "id": 6,
+        "nimi": "Vello Lipand"
+    },
+    "7": {
+        "id": 7,
+        "nimi": "Astrid Gullstrand"
+    },
+    "8": {
+        "id": 8,
+        "nimi": "Karavan"
+    },
+    "14": {
+        "id": 14,
+        "nimi": "Uno Loop"
+    },
+    "15": {
+        "id": 15,
+        "nimi": "Arved Haug"
+    },
+    "16": {
+        "id": 16,
+        "nimi": "Eri Klas"
+    },
+    "17": {
+        "id": 17,
+        "nimi": "Emil Laansoo ansambel"
+    },
+    "13": {
+        "id": 13,
+        "nimi": "RAM-1"
+    },
+    "9": {
+        "id": 9,
+        "nimi": "Agu Tammeorg"
+    },
+    "10": {
+        "id": 10,
+        "nimi": "Ott Arder"
+    },
+    "11": {
+        "id": 11,
+        "nimi": "RAMMM"
+    },
+    "12": {
+        "id": 12,
+        "nimi": "Carl Teike"
+    },
+    "-1": {
+        "id": -1,
+        "nimi": "teadmata"
+    },
+    "200": {
+        "id": 200,
+        "nimi": "Saksa"
+    },
+    "100": {
+        "id": 100,
+        "nimi": "Heinrich Binder"
+    },
+    "101": {
+        "id": 101,
+        "nimi": "Aliide Halliste"
+    },
+    "102": {
+        "id": 102,
+        "nimi": "RAM-3"
+    }
+}

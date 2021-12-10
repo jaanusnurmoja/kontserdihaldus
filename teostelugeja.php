@@ -9,7 +9,11 @@ function getSource()
 
 function workList()
 {
-    $data = [];
+    $data = new stdClass;
+    $data->teosed = [];
+    $data->inimorg = [];
+    $personorg = [];
+
     foreach (getSource()->teosed as $workMain) {
         foreach ($workMain->versioonid as $work) {
             $d = new stdClass;
@@ -22,6 +26,7 @@ function workList()
 
             foreach ($work->helilooja as $c) {
                 $composer[] = $c->nimi;
+                $personorg[$c->id] = $c;
             }
 
             $d->authors .= implode(', ', $composer);
@@ -29,6 +34,7 @@ function workList()
                 $d->authors .= ', tekst: ';
                 foreach ($work->tekstiautor as $l) {
                     $lyricist[] = $l->nimi;
+                    $personorg[$l->id] = $l;
                 }
                 $d->authors .= implode($lyricist);
             }
@@ -36,6 +42,7 @@ function workList()
                 $d->authors .= ', tõlge: ';
                 foreach ($work->tolkija as $t) {
                     $transator[] = $t->nimi;
+                    $personorg[$t->id] = $t;
                 }
                 $d->authors .= implode($transator);
             }
@@ -43,13 +50,30 @@ function workList()
                 $d->authors .= ', seadnud ';
                 foreach ($work->seadja as $arr) {
                     $arranger[] = $arr->nimi;
+                    $personorg[$arr->id] = $arr;
                 }
                 $d->authors .= implode($arranger);
             }
-            $data[] = '<tr><td>' . $d->title . ' </td><td> ' . $d->authors . '</td></tr>';
+            $data->teosed[] = '<tr><td>' . $d->title . ' </td><td> ' . $d->authors . '</td></tr>';
+            if (isset($work->esitaja)) {
+                foreach ($work->esitaja as $perf) {
+                    $personorg[$perf->id] = $perf;
+                }
+            }
+            if (isset($work->esmaettekanne->esitaja)) {
+                foreach ($work->esmaettekanne->esitaja as $perf) {
+                    $personorg[$perf->id] = $perf;
+                }
+            }
         }
     }
+    $data->inimorg = $personorg;
     return $data;
+}
+
+function inimOrg()
+{
+    return workList()->inimorg;
 }
 
 //echo '<pre>';
@@ -60,7 +84,13 @@ function workList()
 //echo '</pre>';
 
 echo '<table>';
-foreach (workList() as $work) {
+foreach (workList()->teosed as $work) {
     echo $work;
 }
 echo '</table>';
+echo '<pre>';
+/* foreach (inimOrg() as $k => $io) {
+    echo '<li>' . $io . '</li>';
+} */
+print_r(inimOrg());
+echo '</pre>';
