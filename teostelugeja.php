@@ -1,5 +1,5 @@
 <?php
-
+include_once('model/localData.php');
 function getSource()
 {
     $source = file_get_contents('teosed.json');
@@ -94,3 +94,11 @@ echo '<pre>';
 } */
 print_r(inimOrg());
 echo '</pre>';
+$id = 1;
+$fields = ['name','desc'];
+$table = 'asjad';
+$data = null;
+$localData = new LocalData();
+
+$localData->setFields($fields);
+print_r($localData->getFields());
