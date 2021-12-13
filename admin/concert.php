@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontserdihaldussüsteem</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-theme.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-	<script src="../js/libs/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
-	<script src="../js/libs/jquery/dist/jquery.slim.js" crossorigin="anonymous"></script>
-	<script src="../js/libs/jquery/external/sizzle/dist/sizzle.min.js" crossorigin="anonymous"></script>
-	<script src="../js/libs/jquery-ui/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="../js/libs/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="../js/libs/jquery/external/sizzle/dist/sizzle.min.js" crossorigin="anonymous"></script>
+    <script src="../js/libs/jquery-ui/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="../js/repeatable-fields/repeatable-fields.js"></script>
 </head>
 
 <body>
@@ -25,41 +27,111 @@
         <span>Kontserdid ja nende kavad</span>
     </header>
     <div class="container-fluid">
-        <div class="repeat">
-            <table class="wrapper" width="100%">
-                <thead>
-                    <tr>
-                        <td width="10%" colspan="4"><span class="add">Add</span></td>
-                    </tr>
-                </thead>
-                <tbody class="container">
-                    <tr class="template row">
-                        <td width="10%">
-                            <span class="move">Move Row</span>
-                            <span class="move-up">Move Up</span>
-                            <input type="text" class="move-steps" value="1" />
-                            <span class="move-down">Move Down</span>
-                        </td>
+        <form method="post">
+            <div id="concert-title" class="row row-cols-5">
+                <div class="col col-form-label-md-3">Nimi</div>
+                <div class="col form-control-lg-8"><input type="text" class=" form-text" name="title"></div>
+            </div>
+            <div id="concert-description" class="row row-cols-5">
+                <div class="col col-form-label-md-3">Tutvustus</div>
+                <div class="col form-control-lg-8"><textarea name="description" class="form-plaintext"></textarea></div>
+            </div>
+            <div id="concert-description" class="row row-cols-5">
+                <div class="col col-form-label-md-3">Sündmuse aeg ja koht</div>
+                <div class="col form-control-lg-8">
+                    <select class="form-select-sm name=" event">
+                        <option>Vali sündmus</option>
+                        <option value="1">Sündmus, millega kava ühendame</option>
+                        <option value="2">Teine sündmus, millega me ei tegele</option>
+                    </select>
+                    <input id="concert_date" name="concert_date" type="date"> <input id="start_time" name="start_time"
+                        type="time">
+                </div>
+            </div>
+            <div id="concert-duration" class="row row-cols-5">
+                <div class="col col-form-label-md-3">Kavandatav kestvus</div>
+                <div class="form-control-lg-8"><input id="duration" name="duration" type="time"
+                        pattern="[0-9]{2}:[0-9]{2}"></div>
+            </div>
 
-                        <td width="10%">An Input Field</td>
+            <div class="repeat">
+                <div class="wrapper" width="100%">
 
-                        <td width="70%">
-                            <input type="text" name="an-input-field[{{row-count-placeholder}}]" />
-                        </td>
+                    <div class="row row-cols-6">
+                        <div><span class="add btn btn-success">Add</span>
+                        </div>
+                        <div class="col">Teos</div>
+                        <div class="col">Esitajad</div>
+                        <div class="col">Kestvus</div>
+                        <div class="col">Kirjeldus</div>
+                        <div class="col">Eemalda</div>
+                    </div>
+                    <div id="esitus" class="rows">
+                        <div class="template row row-cols-6">
+                            <div class="col">
+                                <span class="move btn btn-sm btn-info">Move ↕</span>
+                                <input type="hidden" id="esitus[{{row-count-placeholder}}][id]" />
+                                <input type="hidden" id="esitus[{{row-count-placeholder}}][concert_id]" />
 
-                        <td width="10%"><span class="remove">Remove</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                                <input type="hidden" id="esitus[{{row-count-placeholder}}][jrk]"
+                                    name="table[{{row-count-placeholder}}][jrk]" class="move-steps" value="1" />
+                            </div>
+
+                            <div class="col">
+                                <input type="text" name="esitus[{{row-count-placeholder}}][teos]" />
+                            </div>
+                            <div class="col">
+                                <input type="text" name="esitus[{{row-count-placeholder}}][esitajad]" />
+                            </div>
+                            <div class="col">
+                                <input type="text" name="esitus[{{row-count-placeholder}}][teose_kestvus]" />
+                                <input type="text" name="esitus[{{row-count-placeholder}}][lisakestvus]" />
+                                <input type="text" name="esitus[{{row-count-placeholder}}][esituse_kestvus]" />
+                            </div>
+                            <div class="col" style="height:auto">
+                                <textarea style="height:auto" name="esitus[{{row-count-placeholder}}][perfdesc]"
+                                    placeholder="Vabas vormis tekst"></textarea>
+                            </div>
+                            <div class="col"><span class="remove btn btn-sm btn-danger">Remove</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
     </div>
-    <script>
+
+    <script type="text/javascript">
     jQuery(function() {
         jQuery('.repeat').each(function() {
-            jQuery(this).repeatable_fields();
+            jQuery(this).repeatable_fields({});
         });
     });
     </script>
+    <?php 
+
+        $newlist = [];
+        if (!empty($_POST)) $newlist = array_values($_POST['table']);
+
+        unset($_POST);
+        foreach ($newlist as $key => &$row)
+        {
+            $row['jrk'] = $key;
+            var_dump($key);
+        }
+
+        echo '<pre>';
+        print_r($newlist);
+        echo '</pre>';
+        echo 'Kas näen?';
+
+        foreach ($newlist as $value)
+        {
+            print_r($value['jrk']);
+        }
+
+        ?>
+    </div>
 </body>
 
 </html>
