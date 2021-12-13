@@ -74,7 +74,7 @@
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][concert_id]" />
 
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][jrk]"
-                                    name="table[{{row-count-placeholder}}][jrk]" class="move-steps" value="1" />
+                                    name="esitus[{{row-count-placeholder}}][jrk]" class="move-steps" value="1" />
                             </div>
 
                             <div class="col">
@@ -99,29 +99,33 @@
             </div>
             <input type="submit" value="Submit">
         </form>
-    </div>
 
-    <script type="text/javascript">
-    jQuery(function() {
-        jQuery('.repeat').each(function() {
-            jQuery(this).repeatable_fields({});
+        <script type="text/javascript">
+        jQuery(function() {
+            jQuery('.repeat').each(function() {
+                jQuery(this).repeatable_fields({});
+            });
         });
-    });
-    </script>
-    <?php 
+        </script>
+        <?php 
 
         $newlist = [];
-        if (!empty($_POST)) $newlist = array_values($_POST['table']);
+        if (!empty($_POST)) $newlist = array_values($_POST['esitus']);
 
-        unset($_POST);
         foreach ($newlist as $key => &$row)
         {
             $row['jrk'] = $key;
             var_dump($key);
         }
 
+        foreach($_POST as $key => &$value)
+        if ($key == 'esitus')
+        {
+            $value = $newlist;
+        }
+
         echo '<pre>';
-        print_r($newlist);
+        print_r($_POST);
         echo '</pre>';
         echo 'Kas näen?';
 
