@@ -18,6 +18,37 @@
     <script src="../js/libs/jquery/external/sizzle/dist/sizzle.min.js" crossorigin="anonymous"></script>
     <script src="../js/libs/jquery-ui/jquery-ui.min.js" crossorigin="anonymous"></script>
     <script src="../js/repeatable-fields/repeatable-fields.js"></script>
+    <script type="text/javascript">
+    let list;
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let teosteList = JSON.parse(this.responseText);
+            let i;
+            let n;
+            let versioonid;
+            list = "<option>Vali teos</option>";
+            for (i = 0; i < teosteList.teosed.length; i++) {
+                versioonid = teosteList.teosed[i]["versioonid"];
+                for (n = 0; n < versioonid.length; n++) {
+                    list += "<option value='" + teosteList.teosed[i].id +
+                        "-" + versioonid[n].id + "'> " +
+                        versioonid[n].pealkiri +
+                        " (" + versioonid[n].aasta + ")" +
+                        "</option>"
+
+                }
+
+            }
+            let selectTeosed = document.getElementsByClassName("teosed");
+            for (k in selectTeosed) {
+                selectTeosed[k].innerHTML = list;
+            }
+        }
+    };
+    xmlhttp.open("GET", "../teosed.json", true);
+    xmlhttp.send();
+    </script>
 </head>
 
 <body>
@@ -78,7 +109,11 @@
                             </div>
 
                             <div class="col">
-                                <input type="text" name="esitus[{{row-count-placeholder}}][teos]" />
+                                <select name="esitus[{{row-count-placeholder}}][teos]" class="teosed"
+                                    onchange="workDetails(this.value)">
+
+                                </select>
+                                <div id="authorsPreview"></div>
                             </div>
                             <div class="col">
                                 <div class="repeat">
@@ -124,6 +159,17 @@
                 jQuery(this).repeatable_fields({});
             });
         });
+
+        function workDetails(v) {
+            /*
+            let data = teosteList.teosed[o]["versioonid"][v];
+            let autorid = "";
+            autorid += data.helilooja.join("/");
+            autorid += data.tekstiautor.length > 0 ? ", " + data.tekstiautor.join("/") : "";
+            autorid += data.tolkija.length > 0 ? ", " + data.tekstiautor.join("/") : "";
+            */
+            document.getElementById("authorsPreview").innerHTML = "Veel pole " + v + " kohta miskit näha";
+        }
         </script>
         <?php 
 /*
@@ -151,6 +197,7 @@
         echo 'Kas näen?';
 
         ?>
+
     </div>
 </body>
 

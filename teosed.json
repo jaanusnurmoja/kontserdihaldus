@@ -5,6 +5,7 @@
             "pealkiri": "Cantus Haljalaensis",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 2006,
                     "esmaettekanne": {
                         "esitaja": [
@@ -36,6 +37,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2011,
                     "esituskoosseis": [
                         "rockansambel"
@@ -68,6 +70,7 @@
             "pealkiri": "Piparkoogipoisid",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1960,
                     "esituskoosseis": [
                         "meesansambel",
@@ -117,6 +120,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2013,
                     "esitaja": [
                         {
@@ -146,78 +150,11 @@
             ]
         },
         {
-            "id": 1582693197,
-            "pealkiri": "Aeg meil minna üheskoos",
-            "versioonid": [
-                {
-                    "aasta": 1986,
-                    "esituskoosseis": [
-                        "popansambel"
-                    ],
-                    "esmaettekanne": {
-                        "esitaja": [
-                            {
-                                "id": 8,
-                                "nimi": "Karavan"
-                            }
-                        ],
-                        "kuupaev": null
-                    },
-                    "helilooja": [
-                        {
-                            "id": 9,
-                            "nimi": "Agu Tammeorg"
-                        }
-                    ],
-                    "kestvus": "00:05:00",
-                    "originaal": true,
-                    "pealkiri": "",
-                    "tekstiautor": [
-                        {
-                            "id": 10,
-                            "nimi": "Ott Arder"
-                        }
-                    ]
-                },
-                {
-                    "aasta": 2014,
-                    "esitaja": [
-                        {
-                            "id": 11,
-                            "nimi": "RAMMM"
-                        }
-                    ],
-                    "esituskoosseis": [
-                        "meesansambel"
-                    ],
-                    "helilooja": [
-                        {
-                            "id": 9,
-                            "nimi": "Agu Tammeorg"
-                        }
-                    ],
-                    "kestvus": "00:05:00",
-                    "pealkiri": "Aeg meil minna üheskoos",
-                    "seadja": [
-                        {
-                            "id": 1,
-                            "nimi": "Ahti Bachblum"
-                        }
-                    ],
-                    "tekstiautor": [
-                        {
-                            "id": 10,
-                            "nimi": "Ott Arder"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": 136824003382,
             "pealkiri": "Alte Kameraden",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1889,
                     "esituskoosseis": [
                         "meeskoor",
@@ -249,6 +186,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 1889,
                     "esituskoosseis": [
                         "puhkpilliorkester"
@@ -263,6 +201,7 @@
                     "pealkiri": "Alte Kameraden"
                 },
                 {
+                    "id": 3,
                     "aasta": 1960,
                     "esituskoosseis": [
                         "puhkpilliorkester"
@@ -278,6 +217,7 @@
                 },
                 {
                     "aasta": 1960,
+                    "id": 4,
                     "esitaja": [
                         {
                             "id": 13,
@@ -316,6 +256,7 @@
             "pealkiri": "Aeg meil minna üheskoos",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -337,7 +278,7 @@
                     ],
                     "kestvus": "00:05:00",
                     "originaal": true,
-                    "pealkiri": "",
+                    "pealkiri": "Aeg meil minna üheskoos",
                     "tekstiautor": [
                         {
                             "id": 10,
@@ -346,6 +287,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -384,6 +326,7 @@
             "pealkiri": "Aeg meil minna üheskoos 1",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -414,6 +357,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -452,6 +396,7 @@
             "pealkiri": "Aeg meil minna üheskoos 2",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -473,7 +418,7 @@
                     ],
                     "kestvus": "00:05:00",
                     "originaal": true,
-                    "pealkiri": "",
+                    "pealkiri": "Aeg meil minna üheskoos 2",
                     "tekstiautor": [
                         {
                             "id": 10,
@@ -482,6 +427,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -520,6 +466,7 @@
             "pealkiri": "Aeg meil minna üheskoos 3",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -550,6 +497,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -588,6 +536,7 @@
             "pealkiri": "Aeg meil minna üheskoos 4",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -618,6 +567,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -656,6 +606,7 @@
             "pealkiri": "Aeg meil minna üheskoos 5",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -686,6 +637,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -724,6 +676,7 @@
             "pealkiri": "Aeg meil minna üheskoos 6",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -754,6 +707,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -792,6 +746,7 @@
             "pealkiri": "Aeg meil minna üheskoos 7",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -822,6 +777,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -860,6 +816,7 @@
             "pealkiri": "Aeg meil minna üheskoos 8",
             "versioonid": [
                 {
+                    "id": 1,
                     "aasta": 1986,
                     "esituskoosseis": [
                         "popansambel"
@@ -890,6 +847,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 2014,
                     "esitaja": [
                         {
@@ -928,6 +886,7 @@
             "pealkiri": "Beim Kronenwirt",
             "versioonid": [
                 {
+                    "id": 1,
                     "esituskoosseis": [
                         "lauljad",
                         "külakapell"
@@ -950,6 +909,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "aasta": 1969,
                     "esitaja": [
                         {
