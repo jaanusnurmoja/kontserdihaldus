@@ -126,31 +126,29 @@
         });
         </script>
         <?php 
-
+/*
+        Alljärgnev läheb tegelikult eraldi faili, mis 
+        suhtleb andmebaasiga ja sisestab ridu tabelitesse
+*/
         $newlist = [];
         if (!empty($_POST)) $newlist = array_values($_POST['esitus']);
 
         foreach ($newlist as $key => &$row)
         {
             $row['jrk'] = $key;
-            var_dump($key);
         }
 
-        foreach($_POST as $key => &$value)
-        if ($key == 'esitus')
-        {
-            $value = $newlist;
+        foreach ($_POST as $key => &$value)
+        {        
+            if ($key == 'esitus')
+                {
+                    $value = $newlist;
+                }
         }
-
         echo '<pre>';
         print_r($_POST);
         echo '</pre>';
         echo 'Kas näen?';
-
-        foreach ($newlist as $value)
-        {
-            print_r($value['jrk']);
-        }
 
         ?>
     </div>
