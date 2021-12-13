@@ -81,7 +81,25 @@
                                 <input type="text" name="esitus[{{row-count-placeholder}}][teos]" />
                             </div>
                             <div class="col">
-                                <input type="text" name="esitus[{{row-count-placeholder}}][esitajad]" />
+                                <div class="repeat">
+                                    <div class="wrapper">
+                                        <div class="row">
+                                            <div><span class="add btn btn-sm btn-success">Add</span></div>
+                                        </div>
+                                        <div id="esitajad" class="rows">
+                                            <div class="template row">
+                                                <div class="col">
+                                                    <input type="hidden"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['id']" />
+                                                    <input type="text"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitaja']" />
+                                                </div>
+                                                <div class="col"><span
+                                                        class="remove btn btn-sm btn-danger">Remove</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col">
                                 <input type="text" name="esitus[{{row-count-placeholder}}][teose_kestvus]" />
