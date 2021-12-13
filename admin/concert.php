@@ -27,7 +27,7 @@
             let i;
             let n;
             let versioonid;
-            list = "<option>Vali teos</option>";
+            list = "<option value=''>Vali teos</option>";
             for (i = 0; i < teosteList.teosed.length; i++) {
                 versioonid = teosteList.teosed[i]["versioonid"];
                 for (n = 0; n < versioonid.length; n++) {
@@ -110,10 +110,10 @@
 
                             <div class="col">
                                 <select name="esitus[{{row-count-placeholder}}][teos]" class="teosed"
-                                    onchange="workDetails(this.value)">
+                                    onchange="document.getElementById('esitus[{{row-count-placeholder}}][teos]').innerHTML = workDetails(this.value)">
 
                                 </select>
-                                <div id="authorsPreview"></div>
+                                <div id="esitus[{{row-count-placeholder}}][teos]"></div>
                             </div>
                             <div class="col">
                                 <div class="repeat">
@@ -168,7 +168,7 @@
             autorid += data.tekstiautor.length > 0 ? ", " + data.tekstiautor.join("/") : "";
             autorid += data.tolkija.length > 0 ? ", " + data.tekstiautor.join("/") : "";
             */
-            document.getElementById("authorsPreview").innerHTML = "Veel pole " + v + " kohta miskit näha";
+            return "Veel pole " + v + " kohta miskit näha";
         }
         </script>
         <?php 
