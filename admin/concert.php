@@ -99,22 +99,40 @@
                         <div class="col">Eemalda</div>
                     </div>
                     <div id="esitus" class="rows">
-                        <div class="template row row-cols-6">
+                        <div class="template row row-cols-6" id="esitus[{{row-count-placeholder}}]">
                             <div class="col">
                                 <span class="move btn btn-sm btn-info">Move ↕</span>
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][id]" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][concert_id]" />
-
+                                <input type="hidden" id="esitus[{{row-count-placeholder}}][movesteps]"
+                                    class="move-steps" value="1" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][jrk]"
-                                    name="esitus[{{row-count-placeholder}}][jrk]" class="move-steps" value="1" />
+                                    name="esitus[{{row-count-placeholder}}][jrk]" value="{{row-count-placeholder}}" />
                             </div>
 
                             <div class="col">
-                                <select name="esitus[{{row-count-placeholder}}][teos]" class="teosed"
-                                    onchange="document.getElementById('esitus[{{row-count-placeholder}}][teos]').innerHTML = workDetails(this.value)">
-
+                                <select id="esitus[{{row-count-placeholder}}][teosopts]"
+                                    name="esitus[{{row-count-placeholder}}][teos]"
+                                    class="teosed {{row-count-placeholder}}" onchange="teosVals(workDetails(
+                                        this.value), 
+                                        'esitus['+this.classList[1]+'][teos]',
+                                        'esitus['+this.classList[1]+'][teose_kestvus]'
+                                        )">
                                 </select>
-                                <p id="esitus[{{row-count-placeholder}}][teos]"></p>
+                                <div id="esitus[{{row-count-placeholder}}][teos]">
+                                    <h4></h4>
+                                    <p></p>
+                                </div>
+                                <script type="text/javascript">
+                                function teosVals(v, teosId, kestvusId) {
+                                    console.log(teosId, kestvusId);
+                                    document.getElementById(teosId).innerHTML =
+                                        '<h5>' + v.pealkiri + '</h5>' +
+                                        '<p>' + v.autorid + '</p>';
+                                    document.getElementById(kestvusId).value =
+                                        v.kestvus;
+                                }
+                                </script>
                             </div>
                             <div class="col">
                                 <div class="repeat">
@@ -138,15 +156,19 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <input type="text" name="esitus[{{row-count-placeholder}}][teose_kestvus]" />
-                                <input type="text" name="esitus[{{row-count-placeholder}}][lisakestvus]" />
-                                <input type="text" name="esitus[{{row-count-placeholder}}][esituse_kestvus]" />
+                                <input type="text" id="esitus[{{row-count-placeholder}}][teose_kestvus]"
+                                    name="esitus[{{row-count-placeholder}}][teose_kestvus]" value="" />
+                                <input type="text" id="esitus[{{row-count-placeholder}}][lisakestvus]"
+                                    name="esitus[{{row-count-placeholder}}][lisakestvus]" value="" />
+                                <input type="text" id="esitus[{{row-count-placeholder}}][esituse_kestvus]"
+                                    name="esitus[{{row-count-placeholder}}][esituse_kestvus]" value="" />
                             </div>
                             <div class="col" style="height:auto">
                                 <textarea style="height:auto" name="esitus[{{row-count-placeholder}}][perfdesc]"
                                     placeholder="Vabas vormis tekst"></textarea>
                             </div>
                             <div class="col"><span class="remove btn btn-sm btn-danger">Remove</span></div>
+
                         </div>
                     </div>
                 </div>
@@ -160,33 +182,36 @@
                 jQuery(this).repeatable_fields({});
             });
         });
-
+        </script>
+        <script type="text/javascript">
         function workDetails(v) {
             //
             let s = v.split("-");
             let data;
             let vers = [];
             let autorid = "";
+            let json;
+            let result = {};
 
             for (let o in teosteList) {
                 if (teosteList[o].id == s[0]) {
                     vers = teosteList[o].versioonid;
-                    console.log(vers);
+                    //console.log(vers);
                     for (let k in vers) {
                         if (vers[k].id == s[1]) {
+                            vers[k].main = teosteList[o].id;
                             data = vers[k];
-                            autorid += "Autorid: "
                             data.helilooja.forEach(f);
                             if (typeof data.tekstiautor !== 'undefined') {
-                                autorid += ", ";
+                                autorid += ", tekst: ";
                                 data.tekstiautor.forEach(f);
                             }
                             if (typeof data.tolkija !== 'undefined') {
-                                autorid += ", ";
+                                autorid += ", tõlkija: ";
                                 data.tolkija.forEach(f);
                             }
                             if (typeof data.seadja !== 'undefined') {
-                                autorid += ", ";
+                                autorid += ", seadnud ";
                                 data.seadja.forEach(f);
                             }
 
@@ -194,13 +219,21 @@
                                 if (index > 0) autorid += " / ";
                                 autorid += autor.nimi;
                             }
+                            json = JSON.stringify(data);
+                            result.pealkiri = data.pealkiri;
+                            result.kestvus = data.kestvus;
                         }
                     }
                 }
 
             }
             //
-            return autorid;
+            result.autorid = autorid;
+            result.json = json;
+            console.log(result);
+
+            //return autorid + "<textarea name='esitus[{{row-count-placeholder}}][teos]'>'" + json + "'</textarea>";
+            return result;
         }
 
         function workData(d) {
