@@ -21,17 +21,18 @@
     <script type="text/javascript">
     let list;
     let xmlhttp = new XMLHttpRequest();
+    let teosteList;
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            let teosteList = JSON.parse(this.responseText);
             let i;
             let n;
             let versioonid;
+            teosteList = workData(JSON.parse(this.responseText));
             list = "<option value=''>Vali teos</option>";
-            for (i = 0; i < teosteList.teosed.length; i++) {
-                versioonid = teosteList.teosed[i]["versioonid"];
+            for (i = 0; i < teosteList.length; i++) {
+                versioonid = teosteList[i]["versioonid"];
                 for (n = 0; n < versioonid.length; n++) {
-                    list += "<option value='" + teosteList.teosed[i].id +
+                    list += "<option value='" + teosteList[i].id +
                         "-" + versioonid[n].id + "'> " +
                         versioonid[n].pealkiri +
                         " (" + versioonid[n].aasta + ")" +
@@ -113,7 +114,7 @@
                                     onchange="document.getElementById('esitus[{{row-count-placeholder}}][teos]').innerHTML = workDetails(this.value)">
 
                                 </select>
-                                <div id="esitus[{{row-count-placeholder}}][teos]"></div>
+                                <p id="esitus[{{row-count-placeholder}}][teos]"></p>
                             </div>
                             <div class="col">
                                 <div class="repeat">
@@ -161,14 +162,49 @@
         });
 
         function workDetails(v) {
-            /*
-            let data = teosteList.teosed[o]["versioonid"][v];
+            //
+            let s = v.split("-");
+            let data;
+            let vers = [];
             let autorid = "";
-            autorid += data.helilooja.join("/");
-            autorid += data.tekstiautor.length > 0 ? ", " + data.tekstiautor.join("/") : "";
-            autorid += data.tolkija.length > 0 ? ", " + data.tekstiautor.join("/") : "";
-            */
-            return "Veel pole " + v + " kohta miskit näha";
+
+            for (let o in teosteList) {
+                if (teosteList[o].id == s[0]) {
+                    vers = teosteList[o].versioonid;
+                    console.log(vers);
+                    for (let k in vers) {
+                        if (vers[k].id == s[1]) {
+                            data = vers[k];
+                            autorid += "Autorid: "
+                            data.helilooja.forEach(f);
+                            if (typeof data.tekstiautor !== 'undefined') {
+                                autorid += ", ";
+                                data.tekstiautor.forEach(f);
+                            }
+                            if (typeof data.tolkija !== 'undefined') {
+                                autorid += ", ";
+                                data.tolkija.forEach(f);
+                            }
+                            if (typeof data.seadja !== 'undefined') {
+                                autorid += ", ";
+                                data.seadja.forEach(f);
+                            }
+
+                            function f(autor, index) {
+                                if (index > 0) autorid += " / ";
+                                autorid += autor.nimi;
+                            }
+                        }
+                    }
+                }
+
+            }
+            //
+            return autorid;
+        }
+
+        function workData(d) {
+            return d.teosed;
         }
         </script>
         <?php 
