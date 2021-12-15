@@ -18,6 +18,7 @@
     <script src="../js/libs/jquery/external/sizzle/dist/sizzle.min.js" crossorigin="anonymous"></script>
     <script src="../js/libs/jquery-ui/jquery-ui.min.js" crossorigin="anonymous"></script>
     <script src="../js/repeatable-fields/repeatable-fields.js"></script>
+    <script src="../js/timeconvert.js"></script>
     <script type="text/javascript">
     let list;
     let xmlhttp = new XMLHttpRequest();
@@ -116,20 +117,24 @@
                                     class="teosed {{row-count-placeholder}}" onchange="teosVals(workDetails(
                                         this.value), 
                                         'esitus['+this.classList[1]+'][teos]',
-                                        'esitus['+this.classList[1]+'][teose_kestvus]'
+                                        'esitus['+this.classList[1]+'][teose_kestvus]',
+                                        'esitus['+this.classList[1]+'][lisakestvus]',
+                                        'esitus['+this.classList[1]+'][esituse_kestvus]'
                                         )">
                                 </select>
                                 <textarea id="esitus[{{row-count-placeholder}}][teos]"
                                     name="esitus[{{row-count-placeholder}}][teos_info_txt]" readonly>
                                 </textarea>
                                 <script type="text/javascript">
-                                function teosVals(v, teosId, kestvusId) {
+                                function teosVals(v, teosId, kestvusId, lisaId, kokkuId) {
                                     console.log(teosId, kestvusId);
                                     document.getElementById(teosId).innerHTML =
                                         '<h5>' + v.pealkiri + '</h5>' +
                                         '<p>' + v.autorid + '</p>';
                                     document.getElementById(kestvusId).value =
                                         v.kestvus;
+                                    document.getElementById(kokkuId).value = secToTime(timeToSec(v.kestvus) + timeToSec(
+                                        document.getElementById(lisaId).value));
                                 }
                                 </script>
                             </div>
@@ -154,13 +159,27 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <input type="text" id="esitus[{{row-count-placeholder}}][teose_kestvus]"
-                                    name="esitus[{{row-count-placeholder}}][teose_kestvus]" value="" />
-                                <input type="text" id="esitus[{{row-count-placeholder}}][lisakestvus]"
-                                    name="esitus[{{row-count-placeholder}}][lisakestvus]" value="" />
+                            <div class="col {{row-count-placeholder}}" onload="calcTime(this.childNodes)">
+                                <input type="text" class="{{row-count-placeholder}}"
+                                    id="esitus[{{row-count-placeholder}}][teose_kestvus]"
+                                    name="esitus[{{row-count-placeholder}}][teose_kestvus]" value="00:00:00"
+                                    onchange="document.getElementById('esitus['+this.classlist[0]+'][esituse_kestvus]').value = sec(this.value, document.getElementById('esitus['+this.classlist[0]+'][lisakestvus]').value)" />
+                                <input type="text" class="{{row-count-placeholder}}"
+                                    id="esitus[{{row-count-placeholder}}][lisakestvus]"
+                                    name="esitus[{{row-count-placeholder}}][lisakestvus]" value="00:00:00"
+                                    onchange="document.getElementById('esitus['+this.classlist[0]+'][esituse_kestvus]').value = sec(document.getElementById('esitus['+this.classlist[0]+'][teose_kestvus]').value, this.value)" />
                                 <input type="text" id="esitus[{{row-count-placeholder}}][esituse_kestvus]"
                                     name="esitus[{{row-count-placeholder}}][esituse_kestvus]" value="" />
+                                <script type="text/javascript">
+                                function sec(t, add) {
+                                    console.log(secToTime(timeToSec(t) + timeToSec(add)));
+                                }
+
+                                function calcTime(f) {
+                                    f[2].value = secToTime(teosSec(f[0].value) + lisaSec(f[1].value));
+                                    console.log(f[2].value);
+                                }
+                                </script>
                             </div>
                             <div class="col" style="height:auto">
                                 <textarea style="height:auto" name="esitus[{{row-count-placeholder}}][perfdesc]"
