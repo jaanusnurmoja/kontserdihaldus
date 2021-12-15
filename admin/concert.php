@@ -162,22 +162,22 @@
                             <div class="col {{row-count-placeholder}}" onload="calcTime(this.childNodes)">
                                 <input type="text" class="{{row-count-placeholder}}"
                                     id="esitus[{{row-count-placeholder}}][teose_kestvus]"
-                                    name="esitus[{{row-count-placeholder}}][teose_kestvus]" value="00:00:00"
-                                    onchange="document.getElementById('esitus['+this.classlist[0]+'][esituse_kestvus]').value = sec(this.value, document.getElementById('esitus['+this.classlist[0]+'][lisakestvus]').value)" />
+                                    name="esitus[{{row-count-placeholder}}][teose_kestvus]" value="00:00:00" />
                                 <input type="text" class="{{row-count-placeholder}}"
                                     id="esitus[{{row-count-placeholder}}][lisakestvus]"
-                                    name="esitus[{{row-count-placeholder}}][lisakestvus]" value="00:00:00"
-                                    onchange="document.getElementById('esitus['+this.classlist[0]+'][esituse_kestvus]').value = sec(document.getElementById('esitus['+this.classlist[0]+'][teose_kestvus]').value, this.value)" />
+                                    name="esitus[{{row-count-placeholder}}][lisakestvus]" value="00:00:00" onchange="sec(
+                                        'esitus['+this.className+'][teose_kestvus]', 
+                                        this.id, 
+                                        'esitus['+this.className+'][esituse_kestvus]')" />
                                 <input type="text" id="esitus[{{row-count-placeholder}}][esituse_kestvus]"
                                     name="esitus[{{row-count-placeholder}}][esituse_kestvus]" value="" />
                                 <script type="text/javascript">
-                                function sec(t, add) {
-                                    console.log(secToTime(timeToSec(t) + timeToSec(add)));
-                                }
+                                function sec(tId, addId, resultId) {
+                                    let t = document.getElementById(tId).value;
+                                    let add = document.getElementById(addId).value;
 
-                                function calcTime(f) {
-                                    f[2].value = secToTime(teosSec(f[0].value) + lisaSec(f[1].value));
-                                    console.log(f[2].value);
+                                    let result = secToTime(timeToSec(t) + timeToSec(add));
+                                    document.getElementById(resultId).value = result;
                                 }
                                 </script>
                             </div>
