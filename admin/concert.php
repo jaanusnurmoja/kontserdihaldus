@@ -119,10 +119,9 @@
                                         'esitus['+this.classList[1]+'][teose_kestvus]'
                                         )">
                                 </select>
-                                <div id="esitus[{{row-count-placeholder}}][teos]">
-                                    <h4></h4>
-                                    <p></p>
-                                </div>
+                                <textarea id="esitus[{{row-count-placeholder}}][teos]"
+                                    name="esitus[{{row-count-placeholder}}][teos_info_txt]" readonly>
+                                </textarea>
                                 <script type="text/javascript">
                                 function teosVals(v, teosId, kestvusId) {
                                     console.log(teosId, kestvusId);
