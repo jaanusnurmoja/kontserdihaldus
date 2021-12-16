@@ -23,6 +23,8 @@
     let list;
     let xmlhttp = new XMLHttpRequest();
     let teosteList;
+    let totaltotal = [];
+
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let i;
@@ -83,15 +85,18 @@
             </div>
             <div id="concert-duration" class="row row-cols-5">
                 <div class="col col-form-label-md-3">Kavandatav kestvus</div>
-                <div class="form-control-lg-8"><input id="duration" name="duration" type="time"
-                        pattern="[0-9]{2}:[0-9]{2}"></div>
+                <div class="form-control-lg-8"><input id="duration" name="duration" type="text"
+                        pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}"></div>
+                <div class="col col-form-label-md-3">Arvutatud kestvus</div>
+                <div class="form-control-lg-8"><input id="calc_duration" name="calc_duration" type="text"
+                        pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" class="bg-warning"></div>
             </div>
 
             <div class="repeat">
                 <div class="wrapper" width="100%">
 
                     <div class="row row-cols-6">
-                        <div><span class="add btn btn-success">Add</span>
+                        <div><span class="add btn btn-success" id="add1">Add</span>
                         </div>
                         <div class="col">Teos</div>
                         <div class="col">Esitajad</div>
@@ -119,22 +124,28 @@
                                         'esitus['+this.classList[1]+'][teos]',
                                         'esitus['+this.classList[1]+'][teose_kestvus]',
                                         'esitus['+this.classList[1]+'][lisakestvus]',
-                                        'esitus['+this.classList[1]+'][esituse_kestvus]'
-                                        )">
+                                        'esitus['+this.classList[1]+'][esituse_kestvus]',
+                                        this.classList[1]
+                                        );">
                                 </select>
                                 <textarea id="esitus[{{row-count-placeholder}}][teos]"
                                     name="esitus[{{row-count-placeholder}}][teos_info_txt]" readonly>
                                 </textarea>
                                 <script type="text/javascript">
-                                function teosVals(v, teosId, kestvusId, lisaId, kokkuId) {
+                                function teosVals(v, teosId, kestvusId, lisaId, kokkuId, count) {
                                     console.log(teosId, kestvusId);
                                     document.getElementById(teosId).innerHTML =
                                         '<h5>' + v.pealkiri + '</h5>' +
                                         '<p>' + v.autorid + '</p>';
                                     document.getElementById(kestvusId).value =
                                         v.kestvus;
-                                    document.getElementById(kokkuId).value = secToTime(timeToSec(v.kestvus) + timeToSec(
-                                        document.getElementById(lisaId).value));
+                                    sec(kestvusId, lisaId, kokkuId, count);
+                                    /*
+                                    let secSubTotal = timeToSec(v.kestvus) + timeToSec(
+                                        document.getElementById(lisaId).value);
+                                    totaltotal[count] = secSubTotal;
+                                    document.getElementById(kokkuId).value = secToTime(secSubTotal);
+                                    */
                                 }
                                 </script>
                             </div>
@@ -162,22 +173,28 @@
                             <div class="col {{row-count-placeholder}}" onload="calcTime(this.childNodes)">
                                 <input type="text" class="{{row-count-placeholder}}"
                                     id="esitus[{{row-count-placeholder}}][teose_kestvus]"
-                                    name="esitus[{{row-count-placeholder}}][teose_kestvus]" value="00:00:00" />
+                                    name="esitus[{{row-count-placeholder}}][teose_kestvus]" value="00:00:00"
+                                    pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" />
                                 <input type="text" class="{{row-count-placeholder}}"
                                     id="esitus[{{row-count-placeholder}}][lisakestvus]"
-                                    name="esitus[{{row-count-placeholder}}][lisakestvus]" value="00:00:00" onchange="sec(
+                                    name="esitus[{{row-count-placeholder}}][lisakestvus]" value="00:00:00"
+                                    pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" onchange="sec(
                                         'esitus['+this.className+'][teose_kestvus]', 
                                         this.id, 
-                                        'esitus['+this.className+'][esituse_kestvus]')" />
+                                        'esitus['+this.className+'][esituse_kestvus]', this.className)" />
                                 <input type="text" id="esitus[{{row-count-placeholder}}][esituse_kestvus]"
-                                    name="esitus[{{row-count-placeholder}}][esituse_kestvus]" value="" />
+                                    name="esitus[{{row-count-placeholder}}][esituse_kestvus]" value=""
+                                    pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" />
                                 <script type="text/javascript">
-                                function sec(tId, addId, resultId) {
+                                function sec(tId, addId, resultId, count) {
                                     let t = document.getElementById(tId).value;
                                     let add = document.getElementById(addId).value;
-
-                                    let result = secToTime(timeToSec(t) + timeToSec(add));
+                                    let subTotalSeconds = timeToSec(t) + timeToSec(add);
+                                    totaltotal[count] = subTotalSeconds;
+                                    console.log('totot', totaltotal[parseInt(count)]);
+                                    let result = secToTime(subTotalSeconds);
                                     document.getElementById(resultId).value = result;
+                                    calcAll(totaltotal, count);
                                 }
                                 </script>
                             </div>
@@ -202,6 +219,8 @@
         });
         </script>
         <script type="text/javascript">
+        console.log('totaltotal', totaltotal);
+
         function workDetails(v) {
             //
             let s = v.split("-");
@@ -257,6 +276,18 @@
         function workData(d) {
             return d.teosed;
         }
+
+        let totalSeconds = 0;
+
+        function calcAll(total, count) {
+            totalSeconds = total.reduce(function(a, b) {
+                return a + b;
+            }, 0);
+            document.getElementById("calc_duration").value = secToTime(totalSeconds);
+        }
+
+
+        //document.getElementById("calc_duration").value = secToTime(totalSeconds);
         </script>
         <?php 
 /*
