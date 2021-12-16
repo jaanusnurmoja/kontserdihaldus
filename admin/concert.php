@@ -62,7 +62,7 @@
         <span>Kontserdid ja nende kavad</span>
     </header>
     <div class="container-fluid">
-        <form method="post">
+        <form method="post" name="kava" id="kava">
             <div id="concert-title" class="row row-cols-5">
                 <div class="col col-form-label-md-3">Nimi</div>
                 <div class="col form-control-lg-8"><input type="text" class=" form-text" name="title"></div>
