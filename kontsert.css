@@ -46,6 +46,10 @@ line-height: 21px;
     color:black;
     text-decoration: none;
 }   
+
+.f-items :hover{
+    color: #DE1D3F;
+}
 .logo{ position: absolute;
 width: 354px;
 height: 74px;
@@ -89,17 +93,15 @@ line-height: 21px;
     color: #444343;
     text-decoration: none;
 }
-.g-items li{
-    
-    transition: 300ms;
-}
+.g-items :hover{
+color: #DE1D3F;}
 .m-container{
     position: absolute;
 width: 771px;
 height: 726px;
 left: 38px;
 top: 250px;
-font-family: Roboto;
+font-family: "Roboto";
 font-style: normal;
 font-weight: 500;
 font-size: 18px;
@@ -107,7 +109,7 @@ line-height: 21px;
 
 color: #444343;
 }
-.c-container{
+.c-container {
     position: absolute;
 width: 739px;
 height: 24px;
@@ -122,6 +124,67 @@ left: 38px;
 top: 103px;
 
 }
+.u-container{
+    position: absolute;
+    width: 771px;
+    height: 726px;
+    left: 78px;
+    top: 250px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #444343;
+}#main{
+    position: absolute;
+width: 1223px;
+height: 452px;
+left: 150px;
+top: 250px;
+}
+.first{
+    position: absolute;
+width: 501px;
+height: 100px;
+left: 7px;
+top: 58px;
+
+}
+.second{
+    position: absolute;
+width: 672px;
+height: 100px;
+left: 231px;
+top: 176px;
+}
+.third{
+    position: absolute;
+width: 732px;
+height: 100px;
+left: 471px;
+top: 294px;
+}
+.kkk{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    position: absolute;
+    width: 771px;
+    height: 726px;
+    left: 78px;
+    top: 250px;
+    color: #444343;
+}
+
+
+
+
+
+
+
      
 
 

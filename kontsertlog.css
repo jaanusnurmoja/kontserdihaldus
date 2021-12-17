@@ -1,0 +1,67 @@
+#login{
+    color: #444343;
+    font-family: "roboto", sans-serif;   
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+}
+.mail{
+    position: absolute;
+width: 68px;
+height: 28px;
+left: 644px;
+top: 310px;
+}
+input[type=text]{
+    position: relative;
+width: 564px;
+height: 44px;
+left: 396px;
+top: 362px;
+
+background: #FFFFFF;
+border: 1px solid #215686;
+box-sizing: border-box;
+border-radius: 3px;
+}
+.pass{
+    position: absolute;
+width: 70px;
+height: 28px;
+left: 642px;
+top: 423px;
+}
+input[type=password]{
+    position: absolute;
+width: 564px;
+height: 44px;
+left: 396px;
+top: 468px;
+
+background: #FFFFFF;
+border: 1px solid #215686;
+box-sizing: border-box;
+border-radius: 3px;
+}
+input[type=button]{
+    position: absolute;
+width: 217px;
+height: 49px;
+left: 568px;
+top: 574px;
+
+background: #13F3F3;
+border: 1px solid #215686;
+box-sizing: border-box;
+border-radius: 4px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 35px;
+
+color: #444343;
+cursor: pointer;
+}
+
