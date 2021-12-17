@@ -30,7 +30,6 @@
         {
                     $this->table = $table;
 
-                    return $this;
         }
 
         /**
@@ -49,8 +48,6 @@
         public function setFields($fields)
         {
                     $this->fields = $fields;
-
-                    return $this;
         }
 
         /**
@@ -69,8 +66,6 @@
         public function setId($id)
         {
                     $this->id = $id;
-
-                    return $this;
         }
 
         /**
@@ -89,7 +84,5 @@
         public function setData($data)
         {
                     $this->data = $data;
-
-                    return $this;
         }
 }

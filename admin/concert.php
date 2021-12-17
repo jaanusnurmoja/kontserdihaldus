@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="et">
+<?php
+    include_once('../model/crud.php');
+    include_once('../model/localData.php');
+
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -109,7 +114,8 @@
                             <div class="col">
                                 <span class="move btn btn-sm btn-info">Move ↕</span>
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][id]" />
-                                <input type="hidden" id="esitus[{{row-count-placeholder}}][concert_id]" />
+                                <input type="hidden" id="esitus[{{row-count-placeholder}}][kava_id]"
+                                    name="esitus[{{row-count-placeholder}}][kava_id]" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][movesteps]"
                                     class="move-steps" value="1" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][jrk]"
@@ -135,8 +141,8 @@
                                 function teosVals(v, teosId, kestvusId, lisaId, kokkuId, count) {
                                     console.log(teosId, kestvusId);
                                     document.getElementById(teosId).innerHTML =
-                                        '<h5>' + v.pealkiri + '</h5>' +
-                                        '<p>' + v.autorid + '</p>';
+                                        v.pealkiri + "\n" +
+                                        v.autorid;
                                     document.getElementById(kestvusId).value =
                                         v.kestvus;
                                     sec(kestvusId, lisaId, kokkuId, count);
@@ -160,8 +166,12 @@
                                                 <div class="col">
                                                     <input type="hidden"
                                                         name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['id']" />
+                                                    <input type="hidden"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitus_id']" />
+                                                    <input type="hidden"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['ext_id']" />
                                                     <input type="text"
-                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitaja']" />
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['nimi']" />
                                                 </div>
                                                 <div class="col"><span
                                                         class="remove btn btn-sm btn-danger">Remove</span></div>
@@ -295,7 +305,9 @@
         suhtleb andmebaasiga ja sisestab ridu tabelitesse
 */
         $newlist = [];
-        if (!empty($_POST)) $newlist = array_values($_POST['esitus']);
+        if (!empty($_POST) && isset($_POST['esitus'])) 
+        {
+            $newlist = array_values($_POST['esitus']);
 
         foreach ($newlist as $key => &$row)
         {
@@ -309,10 +321,9 @@
                     $value = $newlist;
                 }
         }
-        echo '<pre>';
-        print_r($_POST);
-        echo '</pre>';
-        echo 'Kas näen?';
+        $crud = new Crud;
+        $crud->submit($_POST);
+    }
 
         ?>
 
