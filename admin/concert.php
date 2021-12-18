@@ -134,14 +134,14 @@
                                         this.classList[1]
                                         );">
                                 </select>
-                                <textarea id="esitus[{{row-count-placeholder}}][teos]"
+                                <div id="esitus[{{row-count-placeholder}}][teos]"
                                     name="esitus[{{row-count-placeholder}}][teos_info_txt]" readonly>
-                                </textarea>
+                                </div>
                                 <script type="text/javascript">
                                 function teosVals(v, teosId, kestvusId, lisaId, kokkuId, count) {
                                     console.log(teosId, kestvusId);
                                     document.getElementById(teosId).innerHTML =
-                                        v.pealkiri + "\n" +
+                                        "<h5>" + v.pealkiri + "</h5>" +
                                         v.autorid;
                                     document.getElementById(kestvusId).value =
                                         v.kestvus;

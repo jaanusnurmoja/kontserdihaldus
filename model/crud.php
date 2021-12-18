@@ -95,7 +95,7 @@ INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 10)
 
             print_r($sql);
 
-        if ($this->db()->query($sql) === TRUE) {
+        if ($this->db()->query($sql) == true) {
             echo "Uued read lisatud!";
             echo '<pre>';
             //print_r($this->related($data));
