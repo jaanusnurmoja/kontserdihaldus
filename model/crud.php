@@ -13,25 +13,37 @@ class Crud
 		return $conn;
 	}
 
-    public function fields($data, $parent = null) {
+    public function fields($data, $lastId, $fk) {
+
+        //$valTypes = [];
         $toSubmit = array_filter($data, function ($item) {
             return !is_array($item);
         });
-        $valTypes = [];
-        foreach($toSubmit as $k => &$v)
+            echo '<pre>: ';
+            print_r($toSubmit);
+            echo ' </pre>';
+
+        foreach($toSubmit as $f => &$s)
         {
-            //$valTypes[] = is_int($v) ? 'i' : (is_double($v) ? 'd' : 's');
-            if ($parent != null && $k == $parent.'_id')
-            {
-                $v = "@last_id_$parent";
-            }
-            if ($k != $parent.'_id' && !is_int($v) && !is_double($v))
-            {
-                $v = "'$v'";
-            }
+                //$valTypes[] = is_int($v) ? 'i' : (is_double($v) ? 'd' : 's');
+                if ($f =! $fk & !is_int($s) && !is_float($s))
+                {
+                    $s = "'$s'";
+                }
+            echo '<pre>väli: ';
+            print_r($f);
+            echo ' võõr: </pre>';
+            print_r($fk);
+            echo '<pre>viimatine: ';
+            print_r($lastId);
+            echo '</pre>';
+            echo '<pre>andmed: ';
+            print_r($s);
+            echo '</pre>';
         }
         $f = new stdClass;
-        $f->names = implode(', ', array_keys($toSubmit));
+        $f->names = str_replace("'", "", implode(', ', array_keys($toSubmit)));
+print_r($f->names);
         $f->toSubmit = $toSubmit;
         $f->values = implode(', ', array_values($toSubmit));
         $f->arrValues = array_values($toSubmit);
@@ -40,24 +52,27 @@ class Crud
         return $f;
     }
 
-    public function queryBuilder($data, $table = 'kava', $sql=null, $parentTable = null)
+    public function queryBuilder($data, $table = 'kava', $lastId=null, $fk=null, $sql=null, $parentTable = null)
     {
         
-        $fields = $this->fields($data, $parentTable)->names;
+        $fields = $this->fields($data, $lastId, $fk)->names;
         //$valTypes = $this->fields($data)->valTypes;
-        $values = $this->fields($data, $parentTable)->values;
+        $values = $this->fields($data, $lastId, $fk)->values;
         //list($vars);
         //$prep = $this->fields($data)->prep;
 
-        $sql .= "INSERT INTO $table($fields) VALUES($values); \n
-        SET @last_id_$table = last_insert_id(); \n"; 
+        $sql .= "INSERT INTO $table($fields) VALUES($values); \n";
+        
         if (!empty($this->related($data)))
         {
+            $sql .= "SET @last_id_$table = last_insert_id(); \n";
             foreach ($this->related($data) as $t => $d)
             {
                 foreach ($d as $row)
                 {
-                    $sql .= $this->queryBuilder($row, $t, null, $table);
+                    $lastId = '@last_id_' .$table;
+                    $mainFkField = $table . '_id';
+                    $sql .= $this->queryBuilder($row, $t, $lastId, $mainFkField, null, $table);
                 }
             }
         }
@@ -95,7 +110,7 @@ INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 10)
 
             print_r($sql);
 
-        if ($this->db()->query($sql) == true) {
+        if ($this->db()->multi_query($sql) == true) {
             echo "Uued read lisatud!";
             echo '<pre>';
             //print_r($this->related($data));
