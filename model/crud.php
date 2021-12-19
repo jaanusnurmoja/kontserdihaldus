@@ -13,64 +13,6 @@ class Crud
 		return $conn;
 	}
 
-    public function fields($data, $parent = null) {
-        $toSubmit = array_filter($data, function ($item) {
-            return !is_array($item);
-        });
-        $valTypes = [];
-        foreach($toSubmit as $k => &$v)
-        {
-            //$valTypes[] = is_int($v) ? 'i' : (is_double($v) ? 'd' : 's');
-            if ($parent != null && $k == $parent.'_id')
-            {
-                $v = "@last_id_$parent";
-            }
-            if ($k != $parent.'_id' && !is_int($v) && !is_double($v))
-            {
-                $v = "'$v'";
-            }
-        }
-        $f = new stdClass;
-        $f->names = implode(', ', array_keys($toSubmit));
-        $f->toSubmit = $toSubmit;
-        $f->values = implode(', ', array_values($toSubmit));
-        $f->arrValues = array_values($toSubmit);
-        //$f->prep = implode(', ', array_fill(0, count($toSubmit),'?'));
-        //$f->valTypes = implode($valTypes);
-        return $f;
-    }
-
-    public function queryBuilder($data, $table = 'kava', $sql=null, $parentTable = null)
-    {
-        
-        $fields = $this->fields($data, $parentTable)->names;
-        //$valTypes = $this->fields($data)->valTypes;
-        $values = $this->fields($data, $parentTable)->values;
-        //list($vars);
-        //$prep = $this->fields($data)->prep;
-
-        $sql .= "INSERT INTO $table($fields) VALUES($values); \n
-        SET @last_id_$table = last_insert_id(); \n"; 
-        if (!empty($this->related($data)))
-        {
-            foreach ($this->related($data) as $t => $d)
-            {
-                foreach ($d as $row)
-                {
-                    $sql .= $this->queryBuilder($row, $t, null, $table);
-                }
-            }
-        }
-        return $sql;
-
-    }
-    public function related($data) 
-    {
-        return array_filter($data, function ($item) {
-            return is_array($item);
-        });
-    }
-
     public function submit($data)
     {
         //SELECT max(id) FROM $table;";
@@ -86,28 +28,122 @@ INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 10);
 INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 20);
 INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 10)
  */     
-        
+       
         if ($this->db()->connect_error) {
-            die("Ühenduse loomine ei õnnestunud: " . $conn->connect_error);
+            die("Ühenduse loomine ei õnnestunud: " . $this->db()->connect_error);
         }
-        $sql=$this->queryBuilder($data, 'kava');
+        $sql= $this->queryBuilder($data);
         
+            if ($this->db()->multi_query($sql) == true) {
+                echo "Andmed lisatud!";
+                echo '<p>' . $sql . '</p>';
+                //print_r($this->related($data));
+                //$lastId = $this->db()->insert_id;
+            } else {
+                echo "Viga: " . $sql . "<br>" . $this->db()->error;
+            }        
 
-            print_r($sql);
 
-        if ($this->db()->query($sql) == true) {
-            echo "Uued read lisatud!";
-            echo '<pre>';
-            //print_r($this->related($data));
-            echo '</pre>';
-            //$lastId = $this->db()->insert_id;
-        } else {
-            echo "Viga: " . $sql . "<br>" . $this->db()->error;
-        }        
+        $this->db()->close();
   
+    }
+    public function queryBuilder($data, $table = null, $f = null, $sql=null, $parentTable = null)
+    {
+       
+        if ($table == null) $table = 'kava';
+        $sql .= '';
+        if ($f == null) {
+            $f = $this->fields($data->fieldsToSubmit, $parentTable);
+        }
+        
+        $fields = str_replace("'", "", $f->names);
+        //$valTypes = $this->fields($data)->valTypes;
+        $values = $f->values;
+        //list($vars);
+        //$prep = $this->fields($data)->prep;
+        $i = 0;
+        echo '<p>' . $i . ' - ' . $table . ', ' . $values . ', parent:' . $parentTable . ' fp:' . $f->parent . ' fväli: ' . $f->vali . '</p>';
+
+        $sql .= "INSERT INTO $table($fields) VALUES($values); \n";
+
+        if (isset($data->related))
+        {
+            $sql .= "SET @last_id_$table = last_insert_id(); \n"; 
+            //$q = $sql;
+            foreach ($data->related as $t => $d)
+            {
+                foreach ($d as $row)
+                {
+                    $i +=1; 
+                    $f = $this->fields($row->fieldsToSubmit, $table);
+                    print_r($f);
+                    $sql .= $this->queryBuilder($row, $t, $f, null, $table);
+                }
+            }
+        }
+        return $sql;
+
     }
 
 
+    public function fields($data, $parent = null) {
+        
+        //$valTypes = [];
+        $f = new stdClass;
+        //$f->toSubmit = $toSubmit;
+        $f->vali = '';
+        foreach($data as &$v)
+        {
+            echo key($data);
+            //$valTypes[] = is_int($v) ? 'i' : (is_double($v) ? 'd' : 's');
+            if (key($data) != $parent.'_id')
+            {
+                if (!(is_int($v) || is_double($v)))
+                {
+                    $v = "'$v'";
+                }
+            }
+            else 
+            {
+                $v = "@last_id_$parent";
+            }
+           
+        }
+        $f->names = implode(', ', array_keys($data));
+        $f->parent = $parent;
+        $f->values = implode(', ', array_values($data));
+
+        
+        //if (isset($grouped->related)) {$f->related = $grouped->related;}
+
+        //$f->arrValues = array_values($toSubmit);
+        //$f->prep = implode(', ', array_fill(0, count($toSubmit),'?'));
+        //$f->valTypes = implode($valTypes);
+        return $f;
+    }
+
+    public function toSubmitAndRelated($data) 
+    {
+        $f = new stdClass;
+        $f->fieldsToSubmit = array_filter($data, function ($item) {
+            return !is_array($item);
+        });
+        $related = array_filter($data, function ($item) {
+            return is_array($item);
+        });
+        if ($related) {
+            
+            foreach ($related as $table => &$rows) {
+                foreach ($rows as $row => $values)
+                {
+                    $related[$table][$row] = $this->toSubmitAndRelated($values);
+                }
+            }
+            $f->related = $related;
+        }
+
+        return $f;
+    }
 }
 
 ?>
