@@ -305,32 +305,25 @@
         suhtleb andmebaasiga ja sisestab ridu tabelitesse
 */
         $newlist = [];
-        if (!empty($_POST))
+        if (!empty($_POST) && isset($_POST['esitus'])) 
         {
-            $crud = new Crud;
-            $data = $crud->toSubmitAndRelated($_POST);
-            
-            if (!empty($_POST) && isset($_POST['esitus'])) 
-            {
-                $newlist = array_values($_POST['esitus']);
+            $newlist = array_values($_POST['esitus']);
 
-                foreach ($newlist as $key => &$row)
-                {
-                    $row['jrk'] = $key;
-                }
-
-                foreach ($_POST as $key => &$value)
-                {        
-                    if ($key == 'esitus')
-                        {
-                            $value = $newlist;
-                        }
-                }
-
-            }
-            
-            $crud->submit($data);
+        foreach ($newlist as $key => &$row)
+        {
+            $row['jrk'] = $key;
         }
+
+        foreach ($_POST as $key => &$value)
+        {        
+            if ($key == 'esitus')
+                {
+                    $value = $newlist;
+                }
+        }
+        $crud = new Crud;
+        $crud->submit($_POST);
+    }
 
         ?>
 
