@@ -113,9 +113,8 @@
                         <div class="template row row-cols-6" id="esitus[{{row-count-placeholder}}]">
                             <div class="col">
                                 <span class="move btn btn-sm btn-info">Move ↕</span>
-                                <input type="hidden" id="esitus[{{row-count-placeholder}}][id]" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][kava_id]"
-                                    name="esitus[{{row-count-placeholder}}][kava_id]" />
+                                    name="esitus[{{row-count-placeholder}}][kava_id]" value=@kava_id />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][movesteps]"
                                     class="move-steps" value="1" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][jrk]"
@@ -167,7 +166,8 @@
                                                     <input type="hidden"
                                                         name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['id']" />
                                                     <input type="hidden"
-                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitus_id']" />
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitus_id']"
+                                                        value=@esitus_id />
                                                     <input type="hidden"
                                                         name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['ext_id']" />
                                                     <input type="text"
@@ -305,25 +305,31 @@
         suhtleb andmebaasiga ja sisestab ridu tabelitesse
 */
         $newlist = [];
-        if (!empty($_POST) && isset($_POST['esitus'])) 
+        if (!empty($_POST))
         {
-            $newlist = array_values($_POST['esitus']);
-
-        foreach ($newlist as $key => &$row)
-        {
-            $row['jrk'] = $key;
-        }
-
-        foreach ($_POST as $key => &$value)
-        {        
-            if ($key == 'esitus')
+            foreach ($_POST as $k => $v)
+            
+            {
+                if (is_array($v))
                 {
-                    $value = $newlist;
+                    $newlist = array_values($v);
+
+                    foreach ($newlist as $key => &$row)
+                    {
+                        if (isset($row['jrk']))
+                        {
+                            $row['jrk'] = $key;
+                        }
+                    }
+
+                    $v = $newlist;
+
                 }
+            }
+
+            $crud = new Crud;
+            $crud->submit($_POST);
         }
-        $crud = new Crud;
-        $crud->submit($_POST);
-    }
 
         ?>
 

@@ -16,20 +16,30 @@ class Crud
     public function fields($data, $lastId, $fk) {
 
         //$valTypes = [];
-        $toSubmit = array_filter($data, function ($item) {
-            return !is_array($item);
-        });
-            echo '<pre>: ';
-            print_r($toSubmit);
-            echo ' </pre>';
 
-        foreach($toSubmit as $f => &$s)
+        $fields = array_keys($data);
+        $vals = array_values($data);
+        
+        for ($i=0;$i<count($vals);$i++)
+        {
+                if ($fields[$i] == $fk) {$vals[$i] = $lastId;}
+                if (!is_int($vals[$i]) && !is_float($vals[$i]) && !is_array($vals[$i]) && substr($vals[$i],0,1) != '@')
+                {
+                    $vals[$i] = "'$vals[$i]'";
+                }
+
+        }
+
+/*
+        foreach($data as $key => &$value)
         {
                 //$valTypes[] = is_int($v) ? 'i' : (is_double($v) ? 'd' : 's');
-                if ($f =! $fk & !is_int($s) && !is_float($s))
+                if ($key == $fk) {$value = $lastId;}
+                if ($key != $fk & !is_int($value) && !is_float($value) && !is_array($value) && !str_starts_with($value,'@'))
                 {
-                    $s = "'$s'";
+                    $value = "'$value'";
                 }
+                /*
             echo '<pre>väli: ';
             print_r($f);
             echo ' võõr: </pre>';
@@ -40,44 +50,64 @@ class Crud
             echo '<pre>andmed: ';
             print_r($s);
             echo '</pre>';
+            */
+            /*
         }
+        */
         $f = new stdClass;
-        $f->names = str_replace("'", "", implode(', ', array_keys($toSubmit)));
+        $f->names = str_replace("'", "", implode(', ', $fields));
 print_r($f->names);
-        $f->toSubmit = $toSubmit;
-        $f->values = implode(', ', array_values($toSubmit));
-        $f->arrValues = array_values($toSubmit);
+        $f->values = implode(', ', $vals);
+        $f->arrValues = $vals;
         //$f->prep = implode(', ', array_fill(0, count($toSubmit),'?'));
         //$f->valTypes = implode($valTypes);
         return $f;
     }
 
-    public function queryBuilder($data, $table = 'kava', $lastId=null, $fk=null, $sql=null, $parentTable = null)
+    public function queryBuilder($data, $table = 'kava', $lastId=null, $fk=null, $parentTable = null, $i=0)
     {
         
-        $fields = $this->fields($data, $lastId, $fk)->names;
+        
+        $oneRecord = $this->oneRecord($data);
+        $fields = $this->fields($oneRecord, $lastId, $fk)->names;
         //$valTypes = $this->fields($data)->valTypes;
-        $values = $this->fields($data, $lastId, $fk)->values;
+        $values = $this->fields($oneRecord, $lastId, $fk)->values;
         //list($vars);
         //$prep = $this->fields($data)->prep;
 
-        $sql .= "INSERT INTO $table($fields) VALUES($values); \n";
-        
+        $sql = "INSERT INTO $table($fields) VALUES($values); \n";
+        //$sql[$i] = "INSERT INTO $table($fields) VALUES($values); \n";
+        $lastId = "@$table"."_id";
+        $sql .= "SET $lastId = last_insert_id(); \n";
+        //$sql[$i] .= "SET $lastId = last_insert_id(); \n";
         if (!empty($this->related($data)))
         {
-            $sql .= "SET @last_id_$table = last_insert_id(); \n";
+        echo '<pre> ';
+        print_r("Andmed $table alamate kohta olemas!");
+        echo '</pre>';
             foreach ($this->related($data) as $t => $d)
             {
                 foreach ($d as $row)
                 {
-                    $lastId = '@last_id_' .$table;
                     $mainFkField = $table . '_id';
-                    $sql .= $this->queryBuilder($row, $t, $lastId, $mainFkField, null, $table);
+                    //echo '<pre> ';
+                    //print_r("Mis on $table pk?");
+                    //echo '</pre>';
+                    $this->queryBuilder($row, $t, $lastId, $mainFkField, $table, $i+1);
                 }
             }
         }
-        return $sql;
+            
+        if ($this->db()->multi_query($sql) == true)
+        {        
+            echo "<p>>Uued read lisatud!</p>";
+            echo $sql;
 
+        }
+        else 
+        {
+            echo "Viga: " . $sql . "<br>" . $this->db()->error;
+        }  
     }
     public function related($data) 
     {
@@ -86,40 +116,22 @@ print_r($f->names);
         });
     }
 
+     public function oneRecord($data) 
+    {
+        return array_filter($data, function ($item) {
+            return !is_array($item);
+        });
+    }
+
     public function submit($data)
     {
-        //SELECT max(id) FROM $table;";
-/*
-        $stmt = $this->db()->prepare("INSERT INTO $table($fields) VALUES($prep)"); //Fetching all the records with input credentials
-        $stmt->bind_param("$valTypes", implode(', ',$vars)); //Where s indicates string type. You can use i-integer, d-double
-        var_dump($stmt);
-        $stmt->execute();
-        $result = $stmt->affected_rows;
-        $stmt->close();
-        INSERT INTO kava(title, description, concert_date, start_time, duration, calc_duration) VALUES('ahaha bbbbb asd', '', '', '', '', '00:05:00'); SET @last_id_kava = last_insert_id();
-INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 10);
-INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 20);
-INSERT INTO esitus(kava_id,jrk) VALUES(@last_id_kava, 10)
- */     
         
         if ($this->db()->connect_error) {
-            die("Ühenduse loomine ei õnnestunud: " . $conn->connect_error);
+            die("Ühenduse loomine ei õnnestunud: " . $this->db()->connect_error);
         }
-        $sql=$this->queryBuilder($data, 'kava');
+        $this->queryBuilder($data, 'kava');
         
 
-            print_r($sql);
-
-        if ($this->db()->multi_query($sql) == true) {
-            echo "Uued read lisatud!";
-            echo '<pre>';
-            //print_r($this->related($data));
-            echo '</pre>';
-            //$lastId = $this->db()->insert_id;
-        } else {
-            echo "Viga: " . $sql . "<br>" . $this->db()->error;
-        }        
-  
     }
 
 
