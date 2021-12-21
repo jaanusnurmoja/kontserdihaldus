@@ -114,7 +114,7 @@
                             <div class="col">
                                 <span class="move btn btn-sm btn-info">Move ↕</span>
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][kava_id]"
-                                    name="esitus[{{row-count-placeholder}}][kava_id]" value=@kava_id />
+                                    name="esitus[{{row-count-placeholder}}][kava_id]" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][movesteps]"
                                     class="move-steps" value="1" />
                                 <input type="hidden" id="esitus[{{row-count-placeholder}}][jrk]"
@@ -158,23 +158,26 @@
                                 <div class="repeat">
                                     <div class="wrapper">
                                         <div class="row">
-                                            <div><span class="add btn btn-sm btn-success">Add</span></div>
+                                            <div><span class="add btn btn-sm btn-success"
+                                                    onclick="document.getElementById('esitus[{{row-count-placeholder}}][esitajad]').click()">Add</span>
+                                            </div>
                                         </div>
-                                        <div id="esitajad" class="rows">
+                                        <div id="esitajad-public" class="rows">
                                             <div class="template row">
                                                 <div class="col">
                                                     <input type="hidden"
-                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['id']" />
+                                                        id="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['id']" />
                                                     <input type="hidden"
-                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitus_id']"
-                                                        value=@esitus_id />
+                                                        id="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitus_id']" />
                                                     <input type="hidden"
-                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['ext_id']" />
+                                                        id="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['ext_id']" />
                                                     <input type="text"
-                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['nimi']" />
+                                                        id="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['nimi']"
+                                                        onchange="document.getElementsByName(this.id)[0].value=this.value" />
                                                 </div>
-                                                <div class="col"><span
-                                                        class="remove btn btn-sm btn-danger">Remove</span></div>
+                                                <div class="col"><span class="remove btn btn-sm btn-danger"
+                                                        onclick="document.getElementById('esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]').click()">Remove</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -213,6 +216,34 @@
                                     placeholder="Vabas vormis tekst"></textarea>
                             </div>
                             <div class="col"><span class="remove btn btn-sm btn-danger">Remove</span></div>
+                            <div style="visibility:hidden;width:1px;height:1px">
+                                <div class="repeat">
+                                    <div class="wrapper">
+                                        <div class="row">
+                                            <div><span class="add btn btn-sm btn-success"
+                                                    id="esitus[{{row-count-placeholder}}][esitajad]">Add</span></div>
+                                        </div>
+                                        <div id="esitajad" class="rows">
+                                            <div class="template row">
+                                                <div class="col">
+                                                    <input type="hidden"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['id']" />
+                                                    <input type="hidden"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['esitus_id']"
+                                                        value="{parent_id}" />
+                                                    <input type="hidden"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['ext_id']" />
+                                                    <input type="hidden"
+                                                        name="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]['nimi']" />
+                                                </div>
+                                                <div class="col"><span class="remove btn btn-sm btn-danger"
+                                                        id="esitus[{{row-count-placeholder}}][esitajad][{{row-count-placeholder}}]">Remove</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -304,6 +335,7 @@
         Alljärgnev läheb tegelikult eraldi faili, mis 
         suhtleb andmebaasiga ja sisestab ridu tabelitesse
 */
+        $crud = new Crud;
         $newlist = [];
         if (!empty($_POST))
         {
@@ -316,21 +348,20 @@
 
                     foreach ($newlist as $key => &$row)
                     {
-                        if (isset($row['jrk']))
-                        {
-                            $row['jrk'] = $key;
-                        }
+                        $newlist[$key] = $crud->firstRestructor($key, $row);
                     }
 
                     $v = $newlist;
 
                 }
             }
-
-            $crud = new Crud;
             $crud->submit($_POST);
         }
-
+        /*
+            echo '<pre>';
+            print_r($_POST);
+            echo'</pre>';
+            */
         ?>
 
     </div>
