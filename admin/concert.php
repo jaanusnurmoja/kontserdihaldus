@@ -145,12 +145,6 @@
                                     document.getElementById(kestvusId).value =
                                         v.kestvus;
                                     sec(kestvusId, lisaId, kokkuId, count);
-                                    /*
-                                    let secSubTotal = timeToSec(v.kestvus) + timeToSec(
-                                        document.getElementById(lisaId).value);
-                                    totaltotal[count] = secSubTotal;
-                                    document.getElementById(kokkuId).value = secToTime(secSubTotal);
-                                    */
                                 }
                                 </script>
                             </div>
@@ -263,7 +257,7 @@
         console.log('totaltotal', totaltotal);
 
         function workDetails(v) {
-            //
+
             let s = v.split("-");
             let data;
             let vers = [];
@@ -274,7 +268,6 @@
             for (let o in teosteList) {
                 if (teosteList[o].id == s[0]) {
                     vers = teosteList[o].versioonid;
-                    //console.log(vers);
                     for (let k in vers) {
                         if (vers[k].id == s[1]) {
                             vers[k].main = teosteList[o].id;
@@ -310,7 +303,6 @@
             result.json = json;
             console.log(result);
 
-            //return autorid + "<textarea name='esitus[{{row-count-placeholder}}][teos]'>'" + json + "'</textarea>";
             return result;
         }
 
@@ -326,9 +318,6 @@
             }, 0);
             document.getElementById("calc_duration").value = secToTime(totalSeconds);
         }
-
-
-        //document.getElementById("calc_duration").value = secToTime(totalSeconds);
         </script>
         <?php 
 /*
@@ -357,11 +346,6 @@
             }
             $crud->submit($_POST);
         }
-        /*
-            echo '<pre>';
-            print_r($_POST);
-            echo'</pre>';
-            */
         ?>
 
     </div>

@@ -40,7 +40,6 @@ class Crud
             }
 
         }
-        //$row = array_merge($row, $arrays);
         return $row;
     }
      
@@ -59,8 +58,6 @@ class Crud
     }
   
     public function fields($data, $lastId, $fk) {
-
-        //$valTypes = [];
 
         $fields = array_keys($data);
         $vals = array_values($data);
@@ -82,7 +79,6 @@ class Crud
 
         $f = new stdClass;
         $f->names = str_replace("'", "", implode(', ', $fields));
-//print_r($f->names);
         $f->values = implode(', ', $vals);
         $f->reorg = $reorg;
         return $f;
@@ -93,26 +89,15 @@ class Crud
         if ($parentTable) {$lastId = '(SELECT max(id) FROM ' . $parentTable . ')';}
         $oneRecord = $this->oneRecord($data);
         $fields = $this->fields($oneRecord, $lastId, $fk);
-        //$valTypes = $this->fields($data)->valTypes;
-        //list($vars);
-        //$prep = $this->fields($data)->prep;
-            echo '<pre> ';
-            print_r($fields->reorg);
-            echo '</pre> ';
 
         $sql = "INSERT INTO $table($fields->names) VALUES($fields->values); \n";
         $sql = str_replace("'{parent_id}'", "(SELECT max(id) FROM $parentTable)", $sql);
-        //$sql[] = "INSERT INTO $table($fields) VALUES($values); \n";
-        //$lastId = "@$table"."_id";
-        //$sql .= "SET $lastId = last_insert_id(); \n";
-            echo '<pre> ';
-            echo $sql;
-            echo '</pre> ';
             
         if ($this->db()->query($sql) == true)
         {        
 
-            echo "<p>Uus rida lisatud! ". $lastId ."</p>";
+            echo "<p>Uus rida lisatud! $lastId </p>";
+            echo "<p>$sql</p>";
         }
         else 
         {
@@ -121,17 +106,11 @@ class Crud
         
         if (!empty($this->related($data)))
         {
-        echo '<pre> ';
-        print_r("Andmed $table alamate kohta olemas!");
-        echo '</pre>';
             foreach ($this->related($data) as $t => $d)
             {
                 foreach ($d as $row)
                 {
                     $mainFkField = $table . '_id';
-                    //echo '<pre> ';
-                    //print_r("Mis on $table pk?");
-                    //echo '</pre>';
                     $this->queryBuilder($row, $t, $lastId, $mainFkField, $table);
                 }
             }
