@@ -30,6 +30,11 @@
     let teosteList;
     let totaltotal = [];
 
+
+    function workData(d) {
+        return d.teosed;
+    }
+
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let i;
@@ -66,7 +71,7 @@
         <span><img src="./images/nurmoja_net_ee.png" alt=""></span>
         <span>Kontserdid ja nende kavad</span>
     </header>
-    <div class="container-fluid">
+    <div id="page" class="container-fluid">
         <form method="post" name="kava" id="kava">
             <div id="concert-title" class="row row-cols-5">
                 <div class="col col-form-label-md-3">Nimi</div>
@@ -190,7 +195,7 @@
                                         this.id, 
                                         'esitus['+this.className+'][esituse_kestvus]', this.className)" />
                                 <input type="text" id="esitus[{{row-count-placeholder}}][esituse_kestvus]"
-                                    name="esitus[{{row-count-placeholder}}][esituse_kestvus]" value=""
+                                    name="esitus[{{row-count-placeholder}}][esituse_kestvus]" value="00:00:00"
                                     pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" />
                                 <script type="text/javascript">
                                 function sec(tId, addId, resultId, count) {
@@ -306,9 +311,6 @@
             return result;
         }
 
-        function workData(d) {
-            return d.teosed;
-        }
 
         let totalSeconds = 0;
 

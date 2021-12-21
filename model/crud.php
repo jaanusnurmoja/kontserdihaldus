@@ -95,9 +95,10 @@ class Crud
             
         if ($this->db()->query($sql) == true)
         {        
-
+            echo '<div class="row-fluid">';
             echo "<p>Uus rida lisatud! $lastId </p>";
             echo "<p>$sql</p>";
+            echo '</div>';
         }
         else 
         {
