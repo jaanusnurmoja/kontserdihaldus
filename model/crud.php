@@ -86,7 +86,6 @@ class Crud
 
     public function queryBuilder($data, $table = 'kava', $lastId=null, $fk=null, $parentTable = null)
     {
-        if ($parentTable) {$lastId = '(SELECT max(id) FROM ' . $parentTable . ')';}
         $oneRecord = $this->oneRecord($data);
         $fields = $this->fields($oneRecord, $lastId, $fk);
 
@@ -107,6 +106,7 @@ class Crud
         
         if (!empty($this->related($data)))
         {
+            $lastId = '(SELECT max(id) FROM ' . $table . ')';
             foreach ($this->related($data) as $t => $d)
             {
                 foreach ($d as $row)
