@@ -132,21 +132,26 @@
                                     class="teosed {{row-count-placeholder}}" onchange="teosVals(workDetails(
                                         this.value), 
                                         'esitus['+this.classList[1]+'][teos]',
+                                        'esitus['+this.classList[1]+'][teos_info_txt]',
                                         'esitus['+this.classList[1]+'][teose_kestvus]',
                                         'esitus['+this.classList[1]+'][lisakestvus]',
                                         'esitus['+this.classList[1]+'][esituse_kestvus]',
                                         this.classList[1]
                                         );">
                                 </select>
-                                <div id="esitus[{{row-count-placeholder}}][teos]"
-                                    name="esitus[{{row-count-placeholder}}][teos_info_txt]" readonly>
+                                <div id="esitus[{{row-count-placeholder}}][teos]">
                                 </div>
+                                <textarea id="esitus[{{row-count-placeholder}}][teos_info_txt]"
+                                    name="esitus[{{row-count-placeholder}}][teos_info_txt]" readonly>
+                                </textarea>
                                 <script type="text/javascript">
-                                function teosVals(v, teosId, kestvusId, lisaId, kokkuId, count) {
+                                function teosVals(v, teosId, teosInfo, kestvusId, lisaId, kokkuId, count) {
                                     console.log(teosId, kestvusId);
                                     document.getElementById(teosId).innerHTML =
                                         "<h5>" + v.pealkiri + "</h5>" +
                                         v.autorid;
+                                    document.getElementById(teosInfo).innerHTML =
+                                        JSON.stringify(v);
                                     document.getElementById(kestvusId).value =
                                         v.kestvus;
                                     sec(kestvusId, lisaId, kokkuId, count);

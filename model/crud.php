@@ -15,7 +15,7 @@ class Crud
 		return $conn;
 	}
 
-     public function firstRestructor($key, $row, $table = 'kava')
+    public function firstRestructor($key, $row, $table = 'kava')
     {
         foreach ($row as $field => &$value)
         {
@@ -44,7 +44,7 @@ class Crud
         }
         return $row;
     }
-     
+
     public function related($data) 
     {
         return array_filter($data, function ($item) {
@@ -149,8 +149,8 @@ class Crud
         $data = new LocalData;
         if ($result = $db->query($sql))
         {
-           echo '<table style="border:1px solid black; border_collapse:none;">';
-           echo '<thead><tr>';
+            echo '<table style="border:1px solid black; border_collapse:none;">';
+            echo '<thead><tr>';
             while ($row = $result->fetch_field())
             {
 
@@ -171,6 +171,12 @@ class Crud
                     $data->setData($row);
                     foreach ($data->getData() as $k => $v)
                     {
+                        if ($k == 'teos_info_txt')
+                        {
+                            $decoded = json_decode($v);
+                            $v = "$decoded->pealkiri<br>
+                            $decoded->autorid";
+                        }
                         $data->getData()->$k = $v;
                         echo '<td style="border:1px solid black; border_collapse:none;padding:2px;">' . 
                         $data->getData()->$k . 
@@ -179,7 +185,7 @@ class Crud
                     echo '</tr>';
                 }
                 echo '</tbody>';
-           }
+            }
             echo '</table>';
         }
     }
