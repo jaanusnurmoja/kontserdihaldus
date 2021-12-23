@@ -8,8 +8,8 @@ Muudatus 3s kord järjest juba
 # Kuidas praegu andmeid vaadata ja sisestada saab
 Salvestatud andmete vaatamiseks
 
-/admin/?data=kava (või esitus või esitajad, st tabeli nimi)
+/admin/?data=kava (või esitus või esitajad, st tabeli nimi) või näiteks /admin/?data=kava?id=1
 
-Uute andmeete sisestamiseks 
+Uute andmete sisestamiseks 
 
 /admin/concert.php?view=new
