@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="et">
 <?php
     include_once('../model/crud.php');
     include_once('../model/localData.php');
-
 ?>
+
+<!DOCTYPE html>
+<html lang="et">
 
 <head>
     <meta charset="UTF-8" />
@@ -346,8 +346,13 @@
 
                 }
             }
-            $crud->submit($_POST);
+            $crud->insert($_POST);
         }
+        if (isset($_GET['data']))
+        {
+            $crud->select($_GET['data']);
+        }
+
         ?>
 
     </div>

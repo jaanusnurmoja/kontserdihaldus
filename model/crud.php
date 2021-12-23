@@ -1,4 +1,6 @@
 <?php
+
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 include_once('localData.php');
@@ -120,7 +122,7 @@ class Crud
     }
     
 
-    public function submit($data)
+    public function insert($data)
     {
         
         if ($this->db()->connect_error) {
@@ -130,11 +132,57 @@ class Crud
         $this->queryBuilder($data, 'kava');
 
         $this->db()->close();
-/*
-        
-*/
     }
 
+    public function select($table, $fields = '*', $where = null, $order = 'id', $limit = null, $group = null)
+    {
+        $db = $this->db();
+        if ($db->connect_error) {
+            die("Ühenduse loomine ei õnnestunud: " . $this->db()->connect_error);
+        }
+        $sql = "SELECT $fields FROM $table";
+        $sql .= $where ? " WHERE $where" : '';
+        $sql .= $group ? " GROUP BY $group" : '';
+        $sql .= " ORDER BY $order";
+        $sql .= $limit ? " LIMIT($limit)" : '';
+        print_r($sql);
+        $data = new LocalData;
+        if ($result = $db->query($sql))
+        {
+           echo '<table style="border:1px solid black; border_collapse:none;">';
+           echo '<thead><tr>';
+            while ($row = $result->fetch_field())
+            {
+
+                $data->setData($row);
+                //$key = key($row);
+                echo '<th style="border:1px solid black; border_collapse:none;padding:2px;">';
+                echo $data->getData()->name;
+                echo '</th>';
+            }
+            echo '</tr></thead>';
+            if ($result->num_rows > 0)
+            {
+                echo '<tbody>';
+                while ($row = $result->fetch_object())
+                {
+                    echo '<tr>';
+                    //$data = new LocalData($row);
+                    $data->setData($row);
+                    foreach ($data->getData() as $k => $v)
+                    {
+                        $data->getData()->$k = $v;
+                        echo '<td style="border:1px solid black; border_collapse:none;padding:2px;">' . 
+                        $data->getData()->$k . 
+                        '</td>';
+                    }
+                    echo '</tr>';
+                }
+                echo '</tbody>';
+           }
+            echo '</table>';
+        }
+    }
 
 }
 
